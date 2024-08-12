@@ -19,7 +19,6 @@ conexao.connect();
  */
 
   
-
 export const consulta = (sql, valores = "", mensagemReject) => {
 
   return new Promise((resolve, reject) => {

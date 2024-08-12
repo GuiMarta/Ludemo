@@ -12,7 +12,7 @@ function App() {
     <div className='app'>
       <div className='border'>
         <h1>App header</h1>
-      </div>
+      </div>  
       <div>
         <BrowserRouter>
           <Routes>
