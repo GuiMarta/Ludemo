@@ -53,7 +53,10 @@ function Login() {
                 }
                 if (response.data.Login === true) {
                     setMensagemSucesso('Login realizado com sucesso!');
-                    setTimeout(() => {navigate('/dashboard'); }, 2000);
+                    setMensagemErro('');
+                    localStorage.setItem('token', response.data.token);
+                    setTimeout(() => {navigate('/dashboard'); }, 1500);
+
                 }
         
                 
