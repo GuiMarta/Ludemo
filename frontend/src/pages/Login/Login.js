@@ -54,7 +54,13 @@ function Login() {
                 if (response.data.Login === true) {
                     setMensagemSucesso('Login realizado com sucesso!');
                     setMensagemErro('');
+                    
+                    //guardando algumas coisinhas no localStorage:
                     localStorage.setItem('token', response.data.token);
+                    localStorage.setItem('nome', response.data.result[0].nome);
+                    localStorage.setItem('crp', response.data.result[0].crp);
+                    localStorage.setItem('email', response.data.result[0].email);
+
                     setTimeout(() => {navigate('/dashboard'); }, 1500);
 
                 }

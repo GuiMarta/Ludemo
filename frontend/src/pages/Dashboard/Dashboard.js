@@ -37,10 +37,11 @@ function Dashboard() {
         validarToken();  // Chama a função de validação do token ao carregar a página
     }, [navigate]);  // O hook será executado uma vez ao montar o componente, devido à dependência `navigate`
 
+    const nome = localStorage.getItem('nome');
     return (
         <div>
-            <h1>Dashboard</h1>
-            {/* Aqui pode colocar outros elementos do seu dashboard */}
+            <h2>Dashboard</h2>
+            <h1>Bem vinda de volta, {nome}!</h1>
         </div>
     );
 }
