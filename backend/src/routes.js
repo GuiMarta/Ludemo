@@ -34,10 +34,10 @@ const verifyToken = (req, res, next) => {
   const token = req.headers["authorization"];
   //Caso precise ver o token que veio:
   //console.log("O token que chegou foi ", token); 
-  if (!token) return res.status(401).send("Acesso negado");
+  if (!token) return res.status(401).json({ valid: false, message: "Acesso negado" });
   else {
     jwt.verify(token, "jwtChave", (err, decoded) => {
-      if (err) return res.status(403).send("Token não é valido");
+      if (err) return res.status(403).json({ valid: false, message: "Token não é valido" });
       req.userId = decoded.id;
       next();
     });
@@ -46,7 +46,10 @@ const verifyToken = (req, res, next) => {
 
 //rota de verificação de token
 router.get("/verifyToken", verifyToken, (req, res) => {
-  res.send("Token Válido");
+  res.json({ valid: true, userId: req.userId, message: "Token Válido" });
 });
+
+
+
 
 export default router;
