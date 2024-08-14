@@ -46,9 +46,11 @@ function Dashboard() {
 
     return (
     <div>
+
+
+
         <div>
-            <h2>Dashboard</h2>
-            <h1>Bem vinda de volta, {nome}!</h1>
+            <h1>Bem vindo de volta, {nome}!</h1>
         </div>
 
 
