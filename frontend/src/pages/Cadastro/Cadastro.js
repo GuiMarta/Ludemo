@@ -36,9 +36,11 @@ function Cadastro() {
                     senha: values.password,
                     email: values.email
                 };
-                const response = await axios.post('http://localhost:5000/cadastro', data);
-                console.log('Cadastro realizado com sucesso:');
 
+                const response = await axios.post('http://localhost:5000/cadastro', data);
+                setMensagem('Cadastro realizado! Redirecionando para a página de login...');
+                alert('Cadastro realizado com sucesso!');
+                
                 setTimeout(() => {
                     navigate('/Login'); 
                 }, 2000);
@@ -46,6 +48,8 @@ function Cadastro() {
             }
             catch (error) {
                 console.error('Erro ao cadastrar:', error);
+                alert('Deu erro aqui !');
+
             }
         }
     };

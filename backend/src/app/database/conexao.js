@@ -17,13 +17,22 @@ conexao.connect();
  * @param {string} mensagemReject mensagem de erro
  * @returns objeto da promise com os resultados
  */
+
+  
 export const consulta = (sql, valores = "", mensagemReject) => {
 
   return new Promise((resolve, reject) => {
+
     conexao.query(sql, valores, (erro, resultado) => {
-      if (erro) return reject(mensagemReject);
+
+      if (erro) {
+        console.log(valores);
+        return reject(mensagemReject);
+      }
+
       const rows = JSON.parse(JSON.stringify(resultado));
       return resolve(rows);
+    
     });
   });
   
