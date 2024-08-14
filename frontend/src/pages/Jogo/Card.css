@@ -1,0 +1,39 @@
+/* Card.css */
+
+.Card {
+  border-style: solid;
+  border-color: #19466B;
+  background-color: #19466B;
+  height: 150px;
+  width: 150px;
+  border-radius: 5px;
+  margin: 15px;
+  float: left;
+  transition: transform 0.6s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /*backface-visibility: hidden;
+  position: relative;
+  transform-style: preserve-3d;*/
+}
+
+.Card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  /*backface-visibility: hidden;
+  transform: rotateY(180deg);*/
+}
+
+.Card.face-up {
+  border-color: #2A78B8;
+  background-color: #2A78B8;
+  transform: rotateY(180deg);
+}
+
+
+
+
