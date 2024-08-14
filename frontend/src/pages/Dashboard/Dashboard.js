@@ -1,4 +1,10 @@
 import React from 'react';
+import { useEffect} from 'react';
+import './Dashboard.css';
+import {Link} from 'react-router-dom'
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 function Dashboard() {
     const navigate = useNavigate();  // Inicializa o useNavigate
@@ -34,11 +40,12 @@ function Dashboard() {
 
         validarToken();  // Chama a função de validação do token ao carregar a página
     }, [navigate]);  // O hook será executado uma vez ao montar o componente, devido à dependência `navigate`
-
+    
+    
     const nome = localStorage.getItem('nome');
+
     return (
-        <>
-        
+    <div>
         <div>
             <h2>Dashboard</h2>
             <h1>Bem vinda de volta, {nome}!</h1>
@@ -68,7 +75,8 @@ function Dashboard() {
             <Link to="/jogo" className="card-link">
                 <div className="card1"></div>
             </Link>
-        </>
+        </div>
+    </div>
         
 
     );
