@@ -9,7 +9,7 @@ function Header() {
             <div>
                 <img className='logo-header' src={logo} alt="" />
             </div>
-            <div className='slogan'>
+            <div class="slogan">
                 Bem-vindo de volta, {nome}!
             </div>
             <div>

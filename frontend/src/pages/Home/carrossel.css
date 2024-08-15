@@ -29,22 +29,30 @@
 .quadrado h1 {
     margin: 0;
     font-size: 3em;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
 }
 
 .quadrado p {
     margin: 20px 0;
     font-size: 1.2em;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
 }
 
 .cta-button {
     background-color: #ffffff;
     color: #335374;
-    border: none;
+    border: 1px solid #ffffff;
     padding: 10px 20px;
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;    
-    transition: background-color 0.3s ease;
+
 }
 
 .cta-button:hover {

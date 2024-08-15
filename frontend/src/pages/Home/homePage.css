@@ -1,3 +1,10 @@
+header  {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+
 .um {
     margin-right: 20px;
     color: #335374;
@@ -57,7 +64,7 @@ header{
 
 footer{
     background-color: #090d10eb;
-    height: 8vh;    
+    height: 4vh;    
     text-align: center;
     bottom: 0;
     width: 100%;
