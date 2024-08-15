@@ -4,6 +4,7 @@ import './homePage.css';
 import ImageCarousel from './carrossel';
 import './carrossel.css';
 import logo from './imgs/LogoLudemo.png'
+import Footer from '../../components/footer'
 
 
 
@@ -24,9 +25,9 @@ function Home() {
 
                 <Link to='/' className='um'>Sobre nós</Link>
 
-                <Link to='/' className='um'>Conatato</Link>
+                <Link to='/' className='um'>Contato</Link>
                 
-                <Link to='/Dashboard' className='dois'>Área do psicólogo</Link>
+                <Link to='/Dashboard' className='dois'>Área do Profissional</Link>
                 </div>
             </header>
             
@@ -35,6 +36,11 @@ function Home() {
                 <ImageCarousel />
                 
             </main>
+
+
+            <footer>
+                <Footer />
+            </footer>
 
         </div>
 

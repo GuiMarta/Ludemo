@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import validaLogin from './LoginValidação';
 import axios from 'axios';
+import './login.css';
 
 function Login() {
     const [values, setValues] = useState({
@@ -77,25 +78,28 @@ function Login() {
     };
 
     return (
-        <div className='d-flex justify-content-center align-items-center bg-primary vh-100'>
-            <div className='bg-white p-3 rounded h-70 '>
-                <form action='' onSubmit={handleSubmit}>
-                    <div className='mb-3'>
-                        <label htmlFor='crp'><strong>CRP</strong></label>
-                        <input type='text' name='crp' onChange={handleInput} placeholder='CRP do Profissional' className='form-control rounded-0' />
-                        <span>{errors.crp && <span className='text-danger' > {errors.crp} </span> }</span>
-                    </div>
-                    <div className='mb-3'>
-                        <label htmlFor='password'><strong>Senha</strong></label>
-                        <input type='password' name='password' onChange={handleInput} placeholder='Senha' className='form-control rounded-0' />
-                        <span>{errors.password && <span className='text-danger' > {errors.password} </span> }</span>
-                    </div>
-                    <button type='submit' className='btn btn-success w-100'> <strong>Login</strong></button>
-                    <p className='text-danger' >{mensagemErro}</p>
-                    <p className='pt-3 small' >Ludemo.com a melhor plataforma de auxilio profissional.</p>
-                    <p className='text-success' >{mensagemSucesso}</p>
-                    <Link to="/Cadastrar" className='btn btn-default border w-100 bg-light text-decoration-none'>Cadastrar</Link>
-                </form>
+        <div className='main-body'>
+            <div className='d-flex justify-content-center align-items-center vh-100'>
+                <div className='bg-white p-3 rounded h-70 '>
+                  <h1>Login</h1>
+                    <form action='' onSubmit={handleSubmit}>
+                        <div className='mb-3'>
+                            <label htmlFor='crp'><strong>CRP</strong></label>
+                            <input type='text' name='crp' onChange={handleInput} placeholder='CRP do Profissional' className='form-control rounded-0' />
+                            <span>{errors.crp && <span className='text-danger' > {errors.crp} </span> }</span>
+                        </div>
+                        <div className='mb-3'>
+                            <label htmlFor='password'><strong>Senha</strong></label>
+                            <input type='password' name='password' onChange={handleInput} placeholder='Senha' className='form-control rounded-0' />
+                            <span>{errors.password && <span className='text-danger' > {errors.password} </span> }</span>
+                        </div>
+                        <button type='submit' className='btn btn-success w-100'> <strong>Login</strong></button>
+                        <p className='text-danger' >{mensagemErro}</p>
+                        <p className='pt-3 small' >Ludemo.com a melhor plataforma de auxilio profissional.</p>
+                        <p className='text-success' >{mensagemSucesso}</p>
+                        <Link to="/Cadastrar" className='btn btn-default border w-100 bg-light text-decoration-none'>Cadastrar</Link>
+                    </form>
+                </div>
             </div>
         </div>
     );

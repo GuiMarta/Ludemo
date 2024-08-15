@@ -39,7 +39,7 @@ function Cadastro() {
 
                 const response = await axios.post('http://localhost:5000/cadastro', data);
                 setMensagem('Cadastro realizado! Redirecionando para a página de login...');
-                alert('Cadastro realizado com sucesso!');
+                
                 
                 setTimeout(() => {
                     navigate('/Login'); 
@@ -48,14 +48,14 @@ function Cadastro() {
             }
             catch (error) {
                 console.error('Erro ao cadastrar:', error);
-                alert('Deu erro aqui !');
+                alert('Deu erro!');
 
             }
         }
     };
 
     return (
-        <div className='d-flex justify-content-center align-items-center bg-primary vh-100'>
+        <div className='d-flex justify-content-center align-items-center main-body vh-100'>
             <div className='bg-white p-3 rounded h-85'>
                 <h2 className=''>Cadastro De Profissional</h2>
                 <form action='' onSubmit={handleSubmit}>
