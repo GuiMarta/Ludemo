@@ -2,9 +2,9 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './carrossel.css';
-import img1 from "./imgs/Crianças-brincando-3.jpg";
-import img2 from "./imgs/Dia-das-Criancas-com-brincadeiras-e-jogos-cooperativos.jpg";
-import img3 from "./imgs/como-brincar-com-criancas-de-3-anos.jpg";
+import img1 from "./imgs/siblings-playing-with-brain-teaser-toys.jpg";
+import img2 from "./imgs/robo-wunderkind--_QpJv4J_AA-unsplash.jpg";
+import img3 from "./imgs/medium-shot-kids-playing-memory-game.jpg";
 
 const ImageCarousel = () => {
     return (

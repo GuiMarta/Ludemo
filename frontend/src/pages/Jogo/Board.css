@@ -1,9 +1,53 @@
 
-.Board {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    justify-content: center;
-    gap: 15px;
-    max-width: 500px;
-    margin: auto;
-  }
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+.game-board {
+  width: 600px; /* Ajuste o tamanho conforme necessário */
+  height: 600px; /* Ajuste o tamanho conforme necessário */
+  background: linear-gradient(rgba(255, 255, 255, 0.514), rgba(255, 255, 255, 0.7)), url('../Home/imgs/jogo\ da\ memoria.avif');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin: 0 auto; /* Centraliza a área do jogo na página */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  border: 2px solid #335374;
+  border-radius: 2%;
+  overflow: hidden;
+}
+
+
+.Card {
+  border-style: solid;
+  border-color: #19466B;
+  background-color: #19466B;
+  height: 100px; /* Tamanho menor */
+  width: 100px; /* Tamanho menor */
+  border-radius: 5px;
+  margin: 10px; /* Menor espaçamento */
+  float: left;
+  transition: transform 0.6s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.Card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+

@@ -80,16 +80,21 @@ class Board extends React.Component { // igual função
 
   render() {
     return (
-      <div className="Board">
-        {this.state.deck.map((card, index) => (
-          <Card
-            key={index}
-            flip={() => this.flip(index)}
-            content={card.content}
-            faceUp={card.faceUp}
-          />
-        ))}
-      </div>
+    <div>
+      
+        <div className="game-container">
+          <div className='game-board'>
+          {this.state.deck.map((card, index) => (
+            <Card
+              key={index}
+              flip={() => this.flip(index)}
+              content={card.content}
+              faceUp={card.faceUp}
+            />
+          ))}
+          </div>
+        </div>
+        </div>
     );
   }
 }

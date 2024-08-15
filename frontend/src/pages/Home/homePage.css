@@ -1,14 +1,15 @@
 .um {
     margin-right: 20px;
-    color: rgb(255, 255, 255);
+    color: #335374;
     text-decoration: none;
-    
     margin-left: 10px;
     margin-top: px;
     padding: 5px;
 }
+
 .um:hover{
     text-decoration: underline;
+    font-weight: 500;
 }
 
 
@@ -19,22 +20,22 @@
 }
 
 .dois {
-    color: rgb(255, 255, 255);
+    color: #335374;
     text-decoration: none;
     
-    border: 1px solid rgb(255, 255, 255);
-    padding: 5px;
+    border: 1px solid #335374;
+    padding: 10px;
     border-radius: 5px;
 } 
 
 .dois:hover {
-    background-color: #ffffff;
-    color: #335374;
+    background-color: #335374;
+    color: #ffffff;
 }
    
 
 header{
-    background-color: #74A8D8;
+    background-color: #ffffff;
     height: 12vh;    
     display: flex;
     justify-content: space-between;
@@ -43,10 +44,9 @@ header{
 }
 
 .slogan{
-    color: #ffffff;
+    color: #335374;
     font-size: 15px;
     font-weight: medium;
-   
 }
 
 @media (max-width: 768px) {

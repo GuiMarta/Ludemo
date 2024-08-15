@@ -4,6 +4,13 @@ import './Dashboard.css';
 import {Link} from 'react-router-dom'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import jogomemoria from '../Home/imgs/side-view-kids-playing-memory-game.jpg'
+import jogo2 from '../Home/imgs/medium-shot-kids-playing-memory-game.jpg';
+import jogo3 from '../Home/imgs/siblings-playing-with-brain-teaser-toys.jpg';
+import jogo4 from '../Home/imgs/ana-klipper-r8R_uJjA_mU-unsplash.jpg'
+import jogo5 from '../Home/imgs/robo-wunderkind--_QpJv4J_AA-unsplash.jpg'
+import jogo6 from '../Home/imgs/robo-wunderkind-3EuPcI31MQU-unsplash.jpg'
+import Header from '../../components/header';
 
 
 function Dashboard() {
@@ -42,43 +49,37 @@ function Dashboard() {
     }, [navigate]);  // O hook será executado uma vez ao montar o componente, devido à dependência `navigate`
     
     
-    const nome = localStorage.getItem('nome');
-
     return (
     <div>
 
-
-
-        <div>
-            <h1>Bem vindo de volta, {nome}!</h1>
-        </div>
-
+        <Header />
 
         <div className="teste">
-            <h1>Página de jogos</h1>
+            <p>JOGANDO COM AS EMOÇÕES</p>
         </div>
         
         <div className="grid">
             <Link to="/jogo" className="card-link">
-                <div className="card1"><img src='https://th.bing.com/th/id/OIP.kK0Ds6EgW61cY-nTI5cC4gHaE7?w=1000&h=666&rs=1&pid=ImgDetMain' /></div>
+                <div className="card1"><img src={jogomemoria} /></div>
             </Link>
             <Link to="/jogo" className="card-link">
-                <div className="card1"></div>
+                <div className="card1"><img src={jogo2} /></div>
             </Link>
             <Link to="/jogo" className="card-link">
-                <div className="card1"></div>
+                <div className="card1"><img src={jogo3} /></div>
             </Link>
             <Link to="/jogo" className="card-link">
-                <div className="card1"></div>
+                <div className="card1"><img src={jogo4} /></div>
             </Link>
             <Link to="/jogo" className="card-link">
-                <div className="card1"></div>
+                <div className="card1"><img src={jogo5} /></div>
             </Link>
             <Link to="/jogo" className="card-link">
-                <div className="card1"></div>
+                <div className="card1"><img src={jogo6} /></div>
             </Link>
         </div>
-    </div>
+            
+        </div>
         
 
     );
