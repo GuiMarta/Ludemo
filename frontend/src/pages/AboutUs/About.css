@@ -1,0 +1,42 @@
+.sobre-nos {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+  }
+
+  .sobre-nos h2{
+    color: #19466B;
+    text-decoration: underline;
+  }
+  
+  .desenvolvedores {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 20px 0;
+  }
+  
+  .foto img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #19466B;
+    margin-top: 25px;
+  }
+  
+  .foto p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+  }
+
+  
+  .texto p {
+    font-size: 18px;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-align: justify;  
+}

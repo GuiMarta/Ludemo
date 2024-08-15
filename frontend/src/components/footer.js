@@ -5,11 +5,13 @@ function Footer(){
 
     return(
 
-        <footer className='pb-5 pt-5 bg-dark text-white' >
-            <p className=''>@Ludemo - Todos os direitos reservados.</p>
-        </footer>
-
+    <footer className='d-flex justify-content-center align-items-center bg-dark text-white' style={{height: '10vh'}}>
+        <p className='mb-0'>
+          &copy; 2024 @Ludemo - Todos os direitos reservados.
+        </p>
+    </footer>
     );
+
 }
 
 export default Footer;

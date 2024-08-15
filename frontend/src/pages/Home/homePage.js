@@ -5,6 +5,8 @@ import ImageCarousel from './carrossel';
 import './carrossel.css';
 import logo from './imgs/LogoLudemo.png'
 import Footer from '../../components/footer'
+import AboutUs from '../AboutUs/About';
+import Contato from '../Contato/contato';
 
 
 
@@ -23,7 +25,7 @@ function Home() {
                 <div>
                 <Link to='/' className='um'>Home</Link>
 
-                <Link to='/' className='um'>Sobre nós</Link>
+                <Link to='<' className='um'>Sobre nós</Link>
 
                 <Link to='/' className='um'>Contato</Link>
                 
@@ -37,6 +39,9 @@ function Home() {
                 
             </main>
 
+            <AboutUs />
+
+            <Contato />
 
             <footer>
                 <Footer />
