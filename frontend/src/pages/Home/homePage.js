@@ -3,55 +3,45 @@ import { Link } from 'react-router-dom';
 import './homePage.css';
 import ImageCarousel from './carrossel';
 import './carrossel.css';
-import logo from './imgs/LogoLudemo.png'
-import Footer from '../../components/footer'
-import AboutUs from '../AboutUs/About';
-import Contato from '../Contato/contato';
-
-
+import logo from './imgs/LogoLudemo.png';
+import Footer from '../../components/footer';
+import AboutUs from './AboutUs/About';
+import Contato from './Contato/contato';
 
 function Home() {
     return ( 
-
         <div> 
-
             <header>
                 <div>
-                <img className='logo-header' src={logo} alt="" ></img>
+                    <img className='logo-header' src={logo} alt="" />
                 </div>
                 <div className='slogan'>
-                Ludemo: Plataforma de auxílio aos profissionais.
+                    Ludemo: Plataforma de auxílio aos profissionais.
                 </div>
                 <div>
-                <Link to='/' className='um'>Home</Link>
-
-                <Link to='<' className='um'>Sobre nós</Link>
-
-                <Link to='/' className='um'>Contato</Link>
-                
-                <Link to='/Dashboard' className='dois'>Área do Profissional</Link>
+                    <a href='#aboutus' className='um'>Sobre nós</a>
+                    <a href='#contato' className='um'>Contato</a>
+                    <Link to='/Dashboard' className='dois'>Área do Profissional</Link>
                 </div>
             </header>
             
             <main>
-                
                 <ImageCarousel />
-                
             </main>
 
-            <AboutUs />
+            <div id='aboutus'>
+                <AboutUs />
+            </div>
 
-            <Contato />
+            <div id='contato'>
+                <Contato />
+            </div>
 
             <footer>
                 <Footer />
             </footer>
-
         </div>
-
-
-
-     );
+    );
 }
 
 export default Home;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
-import desn1 from '../Home/imgs/Imagem do WhatsApp de 2024-07-17 à(s) 09.18.50_bc4ed73a.jpg'
-import desn2 from '../Home/imgs/Imagem do WhatsApp de 2024-08-15 à(s) 20.18.46_7a774215.jpg'
+import desn2 from '../imgs/Imagem do WhatsApp de 2024-08-15 à(s) 20.18.46_7a774215.jpg'
+import desn1 from '../imgs/larissa.jpg'
 
 const AboutUs = () => {
   return (

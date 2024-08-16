@@ -45,7 +45,7 @@ header{
     background-color: #ffffff;
     height: 12vh;    
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding-right: 25px
 }
