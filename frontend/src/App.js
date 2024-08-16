@@ -7,6 +7,7 @@ import Cadastro from './pages/Cadastro/Cadastro';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Home from './pages/Home/homePage';
 import Board from './pages/Jogo/Board';
+import Mobile from './components/mobile';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path='/Cadastrar' element={<Cadastro />}></Route>
             <Route path='/dashboard' element={<Dashboard />}></Route>
             <Route path='/jogo' element={<Board/>}></Route>
+            <Route path='/Mobile' element={<Mobile/>}></Route>
           </Routes>
         </BrowserRouter>  
       </div>
