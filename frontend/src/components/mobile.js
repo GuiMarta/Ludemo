@@ -7,4 +7,5 @@ const Mobile = () => {
         </div>
     )
 }
+
 export default Mobile;

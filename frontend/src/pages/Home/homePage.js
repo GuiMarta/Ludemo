@@ -7,8 +7,25 @@ import logo from './imgs/LogoLudemo.png';
 import Footer from '../../components/footer';
 import AboutUs from './AboutUs/About';
 import Contato from './Contato/contato';
+import { useNavigate } from 'react-router-dom';
+import { isMobile } from 'react-device-detect';
+import { useEffect } from 'react';
+
+
+
+
 
 function Home() {
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (isMobile) {
+            navigate('/Mobile');
+        }
+    }, [navigate]);
+
+
     return ( 
         <div> 
             <header>

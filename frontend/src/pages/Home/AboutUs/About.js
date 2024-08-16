@@ -5,7 +5,7 @@ import desn1 from '../imgs/larissa.jpg'
 
 const AboutUs = () => {
   return (
-    <div className="sobre-nos">
+    <div className="sobre-nos ">
       <h2>Sobre Nós</h2>
       <div className="desenvolvedores">
         <div className="foto">

@@ -4,19 +4,19 @@ import { useNavigate } from 'react-router-dom';
 import validaLogin from './LoginValidação';
 import axios from 'axios';
 import './login.css';
-import { useHistory } from 'react-router-dom';
+
 import { isMobile } from 'react-device-detect';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 function Login() {
 
-    const history = useHistory();
+    const navigateMobile = useNavigate();
 
-  useEffect(() => {
-    if (isMobile) {
-      history.push('/Mobile');
-    }
-  }, [history]);
+    useEffect(() => {
+        if (isMobile) {
+            navigate('/Mobile');
+        }
+    }, [navigateMobile]);
 
 
 

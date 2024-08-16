@@ -1,10 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
-import { useHistory } from 'react-router-dom';
 import { isMobile } from 'react-device-detect';
-import React, { useEffect } from 'react';
-//pages:
+import { useEffect } from 'react';
+
+// pages:
 import Login from './pages/Login/Login';
 import Cadastro from './pages/Cadastro/Cadastro';
 import Dashboard from './pages/Dashboard/Dashboard';
@@ -12,36 +12,38 @@ import Home from './pages/Home/homePage';
 import Board from './pages/Jogo/Board';
 import Mobile from './components/mobile';
 
-
 function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
+  );
+}
 
-  const history = useHistory();
+function AppContent() {
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isMobile) {
-      history.push('/Mobile');
+      navigate('/Mobile');
     }
-  }, [history]);
+  }, [navigate]);
 
   return (
     <div className='app'>
-      <div className='border'>
-
-      </div>
+      <div className='border'></div>
       <div>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Home />}></Route>
-            <Route path='/Login' element={<Login />}></Route>
-            <Route path='/Cadastrar' element={<Cadastro />}></Route>
-            <Route path='/dashboard' element={<Dashboard />}></Route>
-            <Route path='/jogo' element={<Board/>}></Route>
-            <Route path='/Mobile' element={<Mobile/>}></Route>
-          </Routes>
-        </BrowserRouter>  
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/Login' element={<Login />} />
+          <Route path='/Cadastrar' element={<Cadastro />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/jogo' element={<Board />} />
+          <Route path='/Mobile' element={<Mobile />} />
+        </Routes>
       </div>
     </div>
-    );
-  }
+  );
+}
 
 export default App;

@@ -2,20 +2,19 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import CadastroValidacao from './CadastroValidacao.js';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 import { isMobile } from 'react-device-detect';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 
 function Cadastro() {
 
-    const history = useHistory();
+    const navigateMobile = useNavigate();
 
-  useEffect(() => {
-    if (isMobile) {
-      history.push('/Mobile');
-    }
-  }, [history]);
+    useEffect(() => {
+        if (isMobile) {
+            navigate('/Mobile');
+        }
+    }, [navigateMobile]);
 
     const [mensagem, setMensagem] = useState('');
 
