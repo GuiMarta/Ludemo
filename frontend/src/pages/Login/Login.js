@@ -4,8 +4,22 @@ import { useNavigate } from 'react-router-dom';
 import validaLogin from './LoginValidação';
 import axios from 'axios';
 import './login.css';
+import { useHistory } from 'react-router-dom';
+import { isMobile } from 'react-device-detect';
+import React, { useEffect } from 'react';
 
 function Login() {
+
+    const history = useHistory();
+
+  useEffect(() => {
+    if (isMobile) {
+      history.push('/Mobile');
+    }
+  }, [history]);
+
+
+
     const [values, setValues] = useState({
         crp: '',
         password: ''
