@@ -19,7 +19,7 @@ const AboutUs = () => {
       </div>
 
       <div className="texto">
-        <p>
+        <p className='' >
             Há alguns anos, tem-se falado sobre a importância da educação emocional das crianças desde a primeira infância, visto que além de auxiliá-las a desenvolver empatia, caráter e autonomia, a inteligência emocional também é imprescindível para o aprimoramento das capacidades de interação social e de crescimento pessoal. 
             Por esse motivo, a Ludemo, plataforma de auxílio aos profissionais da área da psicologia, busca facilitar o acesso à terapia online através de um recurso que contém as ferramentas lúdicas utilizadas em uma sessão psicológica. 
         </p>

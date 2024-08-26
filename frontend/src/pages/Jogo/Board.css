@@ -5,13 +5,13 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: #f0f0f0;
 }
 
 .game-board {
   width: 600px; /* Ajuste o tamanho conforme necessário */
   height: 600px; /* Ajuste o tamanho conforme necessário */
-  background: linear-gradient(rgba(255, 255, 255, 0.514), rgba(255, 255, 255, 0.7)), url('../Home/imgs/jogo\ da\ memoria.avif');
+  
   background-size: cover;
   background-position: center;
   position: relative;
@@ -30,6 +30,10 @@
   border-style: solid;
   border-color: #19466B;
   background-color: #19466B;
+  background-image: url('./imgs/LogoLudemo.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   height: 100px; /* Tamanho menor */
   width: 100px; /* Tamanho menor */
   border-radius: 5px;

@@ -1,19 +1,23 @@
-import React from 'react';
-import Card from './Card.js';
-import './Board.css';
+import React from "react";
+import Card from "./Card.js";
+import "./Board.css";
 
-import emojiApaixonado from './imgs/emoji apaixonado.jpg';
-import emojiDesapontado from './imgs/emoji desapontado.jpg';
-import emojiEmocionado from './imgs/emoji emocionado.jpg';
-import emojiEnvergonhado from './imgs/emoji envergonhado.jpg';
-import emojiPensando from './imgs/emoji pensando.jpg';
-import emojiRaivoso from './imgs/emoji raivoso.jpg';
-import emojiRindo from './imgs/emoji rindo.jpg';
-import emojiTriste from './imgs/emoji triste.jpg';
+import logo from "./imgs/LogoLudemo.png";
+import Header from "./header.js";
+import emojiApaixonado from "./imgs/emoji apaixonado.jpg";
+import emojiDesapontado from "./imgs/emoji desapontado.jpg";
+import emojiEmocionado from "./imgs/emoji emocionado.jpg";
+import emojiEnvergonhado from "./imgs/emoji envergonhado.jpg";
+import emojiPensando from "./imgs/emoji pensando.jpg";
+import emojiRaivoso from "./imgs/emoji raivoso.jpg";
+import emojiRindo from "./imgs/emoji rindo.jpg";
+import emojiTriste from "./imgs/emoji triste.jpg";
+import Footer from "../../components/footer.js";
 
-
-class Board extends React.Component { // igual função
-  constructor(props) { //
+class Board extends React.Component {
+  // igual função
+  constructor(props) {
+    //
     super(props); // necessário quando usa constructor, permite as func. básicas do react
 
     const fronts = [
@@ -26,19 +30,19 @@ class Board extends React.Component { // igual função
       emojiRindo,
       emojiTriste,
     ];
-    
 
     const deck = fronts
       .concat(fronts) // concat cria pares, duplica as cartas
       .sort(() => Math.random() - 0.5) // sort embaralha os cartas, retornando um valor aleatório entre -0.5 e 0.5, o que resulta em uma ordenação aleatória.
-      .map((f) => { //
+      .map((f) => {
+        //
         return {
           content: f,
           faceUp: false,
         };
       });
 
-    this.state = { 
+    this.state = {
       deck: deck,
       firstCardIdx: null,
       lockBoard: false, // Novo estado para evitar cliques durante a comparação
@@ -80,21 +84,28 @@ class Board extends React.Component { // igual função
 
   render() {
     return (
-    <div>
-      
+
+      <div>
+        <div>
+          <Header />
+        </div>
+
         <div className="game-container">
-          <div className='game-board'>
-          {this.state.deck.map((card, index) => (
-            <Card
-              key={index}
-              flip={() => this.flip(index)}
-              content={card.content}
-              faceUp={card.faceUp}
-            />
-          ))}
+          <div className="game-board">
+            {this.state.deck.map((card, index) => (
+              <Card
+                key={index}
+                flip={() => this.flip(index)}
+                content={card.content}
+                faceUp={card.faceUp}
+              />
+            ))}
           </div>
         </div>
+        <div>
+          <Footer />
         </div>
+      </div>
     );
   }
 }
