@@ -5,7 +5,33 @@ const router = Router();
 
 //rotabase
 router.get("/", (req, res) => {
-  res.send("Servidor de rotas Ludemo Online.");
+  res.status(200).send(`
+    <html>
+      <head>
+        <title>Ludemo API</title>
+        <style>
+          body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+          }
+          h1 {
+            margin-top: 100px;
+            font-size: 36px;
+          }
+          p {
+            margin-top: 20px;
+            font-size: 18px;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Bem-vindo à Ludemo API.</h1>
+        <p>Desenvolvido por Guilherme Marta e Larissa Gewher.</p>
+      </body>
+    </html>
+`);
 });
 //para listar todas os profissionais
 router.get("/profissionais/list", profissionalController.index);

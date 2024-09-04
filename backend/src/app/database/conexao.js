@@ -1,14 +1,44 @@
-import mysql from "mysql";
+import mysql from 'mysql2';
+
 
 const conexao = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "",
-  database: "ludemo",
+  host: 'mysql.infocimol.com.br',
+  user: 'infocimol15',
+  password: 'zaqwer720',
+  database: 'infocimol15',
+  connectTimeout: 10000
 });
 
-conexao.connect();
+//banco reinher
+
+// const conexao = mysql.createConnection({
+//   host: 'mysql.infocimol.com.br',
+//   user: 'infocimol13',
+//   password: 'Guireinehr021',
+//   database: 'infocimol13',
+//   connectTimeout: 10000
+// });
+
+//banco kort
+
+// const conexao = mysql.createConnection({
+//   host: 'mysql.infocimol.com.br',
+//   user: 'infocimol07',
+//   password: 'qrcam123',
+//   database: 'infocimol07',
+//   connectTimeout: 10000
+// });
+
+
+
+conexao.connect((err) => {
+  if (err) {
+      console.error('Erro ao conectar no banco de dados: ' + err);
+      return;
+  }
+  console.log('Conexão bem-sucedida com o banco de dados');
+});
+
 
 /**
  *
