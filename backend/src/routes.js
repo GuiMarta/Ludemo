@@ -1,6 +1,8 @@
 import { Router } from "express";
 import profissionalController from "./app/controllers/profissionalController.js";
 import jwt from "jsonwebtoken";
+import conexao from "./app/database/conexao.js"; // Importe a conexão do banco de dados
+
 const router = Router();
 
 //rotabase
@@ -43,6 +45,15 @@ router.get("/sobre", (req, res) => {
   });
 });
 
+// Rota para verificar a conexão com o banco de dados
+router.get("/check-db", (req, res) => {
+  conexao.ping((err) => {
+    if (err) {
+      return res.status(500).json({ message: "Erro ao conectar ao banco de dados", error: err });
+    }
+    res.status(200).json({ message: "Conexão com o banco de dados bem-sucedida" });
+  });
+});
 
 //para listar todas os profissionais
 router.get("/profissionais/list", profissionalController.index);
@@ -85,8 +96,5 @@ const verifyToken = (req, res, next) => {
 router.get("/verifyToken", verifyToken, (req, res) => {
   res.json({ valid: true, userId: req.userId, message: "Token Válido" });
 });
-
-
-
 
 export default router;
