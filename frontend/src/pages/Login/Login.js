@@ -60,7 +60,7 @@ function Login() {
                 };
                 
                 console.log('Enviando dados para o servidor:', data);
-                const response = await axios.post('http://localhost:5000/login', data);
+                const response = await axios.post('https://ludemo-api.vercel.app/login', data);
 
                 console.log('Resposta do servidor:', response.data);
                 if (response.status === 204) {
