@@ -33,6 +33,17 @@ router.get("/", (req, res) => {
     </html>
 `);
 });
+
+//rota sobre
+router.get("/sobre", (req, res) => {
+  res.status(200).json({
+    message: "Rota sobre funcionando",
+    version: "1.0.0",
+    developers: ["Guilherme Marta", "Larissa Gewher"]
+  });
+});
+
+
 //para listar todas os profissionais
 router.get("/profissionais/list", profissionalController.index);
 
