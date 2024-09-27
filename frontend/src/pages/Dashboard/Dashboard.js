@@ -27,7 +27,7 @@ function Dashboard() {
             }
 
             try {
-                const res = await axios.get('http://localhost:5000/verifyToken', {
+                const res = await axios.get('https://ludemo-api.vercel.app/verifyToken', {
                     headers: {
                         'authorization': token //manda o token do localStorage para o backend
                     }
