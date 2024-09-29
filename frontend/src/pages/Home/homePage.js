@@ -10,11 +10,6 @@ import Contato from './Contato/contato';
 import { useNavigate } from 'react-router-dom';
 import { isMobile } from 'react-device-detect';
 import { useEffect } from 'react';
-
-
-
-
-
 function Home() {
 
     const navigate = useNavigate();

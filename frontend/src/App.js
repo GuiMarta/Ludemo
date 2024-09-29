@@ -11,6 +11,8 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import Home from './pages/Home/homePage';
 import Board from './pages/Jogo/Board';
 import Mobile from './components/mobile';
+import Id from './pages/Sessao/info/info';
+import GameBoard from './pages/Sessao/GameBoard/gameboard';
 
 function App() {
   return (
@@ -40,6 +42,10 @@ function AppContent() {
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/jogo' element={<Board />} />
           <Route path='/Mobile' element={<Mobile />} />
+          {/* sessao paciente */}
+          <Route path='/sessao' element={<GameBoard />} />
+          <Route path='/sessao/id' element={<Id />} />
+          
         </Routes>
       </div>
     </div>
