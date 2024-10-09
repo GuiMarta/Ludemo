@@ -36,7 +36,7 @@ class profissionalController {
 
     catch (error) {
       console.error('Erro no login:', error); // Adiciona log para capturar detalhes do erro
-      res.status(500).json({ message: 'Erro interno do servidor' });
+      res.status(500).json({ message: 'Catch de Erro interno do servidor' });
     }
 
   }

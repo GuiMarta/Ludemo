@@ -6,7 +6,6 @@ const conexao = mysql.createConnection({
   user: 'infocimol15',
   password: 'zaqwer720',
   database: 'infocimol15',
-  connectTimeout: 10000
 });
 
 //banco reinher

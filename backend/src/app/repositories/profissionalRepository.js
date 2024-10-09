@@ -13,7 +13,7 @@ class profissionalRepository {
 
   findById(id) {
     const sql = "SELECT * FROM profissional WHERE idprofissional=?";
-    return consulta(sql, id, "Não foi possivel localizar este usuário  em ProfissionalRepository");
+    return consulta(sql, id, "Não foi possivel localizar este usuário em ProfissionalRepository");
   }
 
   login(info) {

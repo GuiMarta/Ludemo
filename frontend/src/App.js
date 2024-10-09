@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
 import { isMobile } from 'react-device-detect';
 import { useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 // pages:
 import Login from './pages/Login/Login';
@@ -13,6 +15,7 @@ import Board from './pages/Jogo/Board';
 import Mobile from './components/mobile';
 import Id from './pages/Sessao/info/info';
 import GameBoard from './pages/Sessao/GameBoard/gameboard';
+
 
 function App() {
   return (

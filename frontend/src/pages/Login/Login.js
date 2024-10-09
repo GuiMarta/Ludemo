@@ -6,6 +6,7 @@ import axios from 'axios';
 import './login.css';
 
 import { isMobile } from 'react-device-detect';
+import { Spinner } from 'react-bootstrap'; // Importando Spinner do Bootstrap  
 import { useEffect } from 'react';
 
 function Login() {
@@ -26,7 +27,7 @@ function Login() {
     });
 
     const [errors, setErrors] = useState({});
-
+    const [loading, setLoading] = useState(false); // Estado para controle do ícone de carregamento
     const [mensagemErro, setMensagemErro] = useState('');
     const [mensagemSucesso, setMensagemSucesso] = useState('');
 
@@ -53,6 +54,8 @@ function Login() {
         const hasErrors = Object.values(validationErrors).some(error => error !== '');
 
         if (!hasErrors) {
+
+            setLoading(true); // Ativa o ícone de carregamento
             try {
                 const data = {
                     crp: values.crp,
@@ -61,6 +64,7 @@ function Login() {
                 
                 console.log('Enviando dados para o servidor:', data);
                 const response = await axios.post('https://ludemo-api.vercel.app/login', data);
+                // const response = await axios.post('http://localhost:3000/login', data);
                 
                 console.log('Resposta do servidor:', response.data);
                 if (response.status === 204) {
@@ -83,8 +87,11 @@ function Login() {
                 
             } 
             catch (error) {
-                alert('Erro ao autenticar usuário, verifique o console.');
+                alert('API não disponível no momento, tentando reconectar...');
                 console.error('Erro ao autenticar usuário:', error);
+            }
+            finally {
+                setLoading(false); // Finaliza o carregamento
             }
         } else {
             console.log('Formulário não enviado ao servidor, corrija os erros de validação.');
@@ -107,9 +114,20 @@ function Login() {
                             <input type='password' name='password' onChange={handleInput} placeholder='Senha' className='form-control rounded-0' />
                             <span>{errors.password && <span className='text-danger' > {errors.password} </span> }</span>
                         </div>
-                        <button type='submit' className='btn btn-success w-100'> <strong>Login</strong></button>
-                        <p className='text-danger' >{mensagemErro}</p>
-                        <p className='pt-3 small' >Ludemo.com a melhor plataforma de auxilio profissional.</p>
+
+                        {loading ? (
+                            <div className="text-center">
+                                <Spinner animation="border" role="status">
+                                    <span className="visually-hidden">Carregando...</span>
+                                </Spinner>
+                            </div>
+                        ) : (
+                            <button type='submit' className='btn btn-success w-100'><strong>Login</strong></button>
+                        )}
+
+
+                        <p className='text-danger mt-3' >{mensagemErro}</p>
+                        <p className='pt-1 small' >Ludemo.com a melhor plataforma de auxilio profissional.</p>
                         <p className='text-success' >{mensagemSucesso}</p>
                         <Link to="/Cadastrar" className='btn btn-default border w-100 bg-light text-decoration-none'>Cadastrar</Link>
                     </form>

@@ -45,15 +45,68 @@ router.get("/sobre", (req, res) => {
   });
 });
 
+
+
+
+
+// Função para tentar conectar ao banco de dados
+function connectToDatabase(callback) {
+  let retryCount = 0;
+  const maxRetries = 10; // tentar 10 vezes
+  const retryInterval = 1000; // 1 segundo
+
+  function attemptReconnect() {
+    conexao.ping((err) => {
+      if (err) {
+        if (retryCount < maxRetries) {
+          retryCount++;
+          console.log(`Falha ao conectar ao banco de dados. Tentando novamente em ${retryInterval / 1000} segundo...`);
+          setTimeout(attemptReconnect, retryInterval);
+        } else {
+          console.log("Falha ao conectar ao banco de dados após várias tentativas.");
+          callback(err);
+        }
+      } else {
+        console.log("Conexão com o banco de dados bem-sucedida");
+        callback(null); // Conexão bem-sucedida
+      }
+    });
+  }
+
+  attemptReconnect(); // Inicia a tentativa de conexão
+}
+
 // Rota para verificar a conexão com o banco de dados
 router.get("/check-db", (req, res) => {
-  conexao.ping((err) => {
+  connectToDatabase((err) => {
     if (err) {
       return res.status(500).json({ message: "Erro ao conectar ao banco de dados", error: err });
     }
     res.status(200).json({ message: "Conexão com o banco de dados bem-sucedida" });
   });
 });
+
+// Rota de LOGIN
+router.post("/login", (req, res) => {
+  console.log("Solicitação de Login Recebida");
+
+  // Verifica a conexão antes de proceder com o login
+  connectToDatabase((err) => {
+    if (err) {
+      return res.status(500).json({ message: "Erro ao conectar ao banco de dados", error: err });
+    }
+    
+    // Chame o controlador de login se a conexão for bem-sucedida
+    profissionalController.login(req, res);
+  });
+});
+
+
+
+
+
+
+
 
 //para listar todas os profissionais
 router.get("/profissionais/list", profissionalController.index);
@@ -70,11 +123,7 @@ router.put("/profissional/update/:id", profissionalController.update);
 //para criar um novo cadastro, enviando as info no corpo da requisição
 router.post("/cadastro", profissionalController.store);
 
-//rota de LOGIN
-router.post("/login", (req, res) => {
-  console.log("Solicitação de Login Recebida");
-  profissionalController.login(req, res);
-});
+
 
 //funcao para verificar o token
 const verifyToken = (req, res, next) => {
