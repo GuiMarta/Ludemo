@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import validaLogin from './LoginValidação';
 import axios from 'axios';
 import './login.css';
-
+import logo from './imgs/LogoLudemo.png';
+import Footer from '../../components/footer';
 import { isMobile } from 'react-device-detect';
 import { Spinner } from 'react-bootstrap'; // Importando Spinner do Bootstrap  
 import { useEffect } from 'react';
@@ -99,6 +100,19 @@ function Login() {
     };
 
     return (
+        <div>
+            <header>
+                <div>
+                    <img className='logo-header' src={logo} alt="" />
+                </div>
+                <div className="slogan">
+                    Ludemo: Plataforma de auxílio aos profissionais.
+                </div>
+                <div>
+                    <Link to='/' className='dois'>Página Incial</Link>
+                </div>
+            </header>
+        
         <div className='main-body'>
             <div className='d-flex justify-content-center align-items-center vh-100'>
                 <div className='bg-white p-3 rounded h-70 '>
@@ -134,6 +148,9 @@ function Login() {
                 </div>
             </div>
         </div>
+        <Footer />
+        </div>
+
     );
 }
 
