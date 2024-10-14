@@ -6,7 +6,7 @@ const Mobile = () => {
     return (
         <div className="mobile d-block align-items-center justify-content-center" style={{ height: "", color: "#374354", textAlign: "center", padding: "20px" }}>
             <h1 style={{ fontSize: "24px", marginBottom: "20px" }}>
-                A Ludemo não foi desenvolvida para dispitivos móveis :(
+                A Ludemo não foi desenvolvida para dispositivos móveis :(
             </h1>
             <img
                 className='logo-mobile'
