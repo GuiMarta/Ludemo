@@ -1,12 +1,25 @@
 import React from 'react';
 import jogo6 from './image.png';
 import './gameboard.css';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {Link} from 'react-router-dom'
 import HeaderGameBoard from './header';
 import Footer from '../../../components/footer';
+import { isMobile } from 'react-device-detect';
 
 
 const GameBoard = () => {
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (isMobile) {
+            navigate('/Mobile');
+        }
+    }, [navigate]);
+
+
     // Lógica do componente GameBoard aqui
     const IdSessao = localStorage.getItem('IdSessao');
     const Apelido = localStorage.getItem('Apelido');
