@@ -27,6 +27,7 @@ class profissionalController {
       }
       //USUÁRIO ENCONTRADO:
       console.log("Usuário encontrado");
+      //GERANDO TOKEN
       const id = result[0].idprofissional;
       const token = jwt.sign({id}, "jwtChave", {expiresIn : '1h'});
       //console.log("Token gerado:", token); //CONSOLE LOG PARA VERIFICAR O TOKEN GERADO NO BACKEND

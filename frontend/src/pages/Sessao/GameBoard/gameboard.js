@@ -9,44 +9,45 @@ import Footer from '../../../components/footer';
 import { isMobile } from 'react-device-detect';
 
 
-const params = new URLSearchParams(window.location.search);
-const encryptedData = params.get('data');
-
-
-
-
-if (encryptedData) {
-    // Descriptografa os parâmetros e armazena no localStorage
-    const { idProfissional, apelido } = decryptParams(encryptedData);
-    localStorage.setItem('idProfissional', idProfissional);
-    localStorage.setItem('apelidoPaciente', apelido);
-}
-
-// Pega o valor criptografado da URL
-
-
-
-
-// Função para descriptografar (em Base64)
-function decryptParams(encryptedData) {
-const decryptedData = atob(encryptedData);  // Descriptografa os dados Base64
-return JSON.parse(decryptedData);  // Converte a string de volta para objeto JSON
-}
-
-
-
-
-
-
-
 const GameBoard = () => {
     const navigate = useNavigate();
+    const params = new URLSearchParams(window.location.search);
+    const encryptedData = params.get('data');
+
+    console.log("data:"+encryptedData); //testar se está pegando os dados dos parametros da requisição
 
     useEffect(() => {
+
         if (isMobile) {
             navigate('/Mobile');
         }
     }, [navigate]);
+    
+    useEffect(() => {
+       
+        if (encryptedData) {
+            // Descriptografa os parâmetros e armazena no localStorage
+            const { idProfissional, apelido } = decryptParams(encryptedData);
+            localStorage.setItem('idProfissional', idProfissional);
+            localStorage.setItem('apelidoPaciente', apelido);
+        }
+
+        else {
+            // Se nao achar parâmetros, redireciona para a pagina de sessao
+            navigate('/sessao/notfound ');
+        }
+    
+        // Função para descriptografar (em Base64)
+        function decryptParams(encryptedData) {
+            const decryptedData = atob(encryptedData);  // Descriptografa os dados Base64
+            return JSON.parse(decryptedData);  // Converte a string de volta para objeto JSON
+        }
+
+
+
+
+
+    }, []);
     
 
     

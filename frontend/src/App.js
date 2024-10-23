@@ -46,8 +46,8 @@ function AppContent() {
           <Route path='/jogo' element={<Board />} />
           <Route path='/Mobile' element={<Mobile />} />
           {/* sessao paciente */}
-          <Route path='/gameboard' element={<GameBoard />} />
-          <Route path='/sessao/id' element={<SessaoId />} />
+          <Route path='/sessao/gameboard' element={<GameBoard />} />
+          <Route path='/sessao/notfound' element={<Mobile />} />
           
         </Routes>
       </div>

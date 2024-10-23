@@ -25,7 +25,7 @@ function Id() {
             localStorage.setItem('IdSessao', IdSessao);
             setConfirmaMsg('Dados salvos com sucesso!');
             seterroMsg('');
-            window.location.href = '/sessao';
+            window.location.href = '/gameboard';
         }
         else {
             setConfirmaMsg('');

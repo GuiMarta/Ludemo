@@ -64,8 +64,8 @@ function Login() {
                 };
                 
                 console.log('Enviando dados para o servidor:', data);
-                const response = await axios.post('https://ludemo-api.vercel.app/login', data);
-                // const response = await axios.post('http://localhost:3000/login', data);
+                // const response = await axios.post('https://ludemo-api.vercel.app/login', data);
+                const response = await axios.post('http://localhost:5000/login', data);
                 
                 console.log('Resposta do servidor:', response.data);
                 if (response.status === 204) {
@@ -80,6 +80,7 @@ function Login() {
                     localStorage.setItem('nome', response.data.result[0].nome);
                     localStorage.setItem('crp', response.data.result[0].crp);
                     localStorage.setItem('email', response.data.result[0].email);
+                    localStorage.setItem('idProfissional', response.data.result[0].idprofissional);
 
                     setTimeout(() => {navigate('/dashboard'); }, 1500);
 
