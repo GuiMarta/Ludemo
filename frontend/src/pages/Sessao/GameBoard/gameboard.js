@@ -9,8 +9,37 @@ import Footer from '../../../components/footer';
 import { isMobile } from 'react-device-detect';
 
 
-const GameBoard = () => {
+const params = new URLSearchParams(window.location.search);
+const encryptedData = params.get('data');
 
+
+
+
+if (encryptedData) {
+    // Descriptografa os parâmetros e armazena no localStorage
+    const { idProfissional, apelido } = decryptParams(encryptedData);
+    localStorage.setItem('idProfissional', idProfissional);
+    localStorage.setItem('apelidoPaciente', apelido);
+}
+
+// Pega o valor criptografado da URL
+
+
+
+
+// Função para descriptografar (em Base64)
+function decryptParams(encryptedData) {
+const decryptedData = atob(encryptedData);  // Descriptografa os dados Base64
+return JSON.parse(decryptedData);  // Converte a string de volta para objeto JSON
+}
+
+
+
+
+
+
+
+const GameBoard = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -18,18 +47,9 @@ const GameBoard = () => {
             navigate('/Mobile');
         }
     }, [navigate]);
-
-
-    // Lógica do componente GameBoard aqui
-    const IdSessao = localStorage.getItem('IdSessao');
-    const Apelido = localStorage.getItem('Apelido');
     
-    if (!IdSessao || !Apelido || IdSessao === '' || Apelido === '') {
-        window.location.href = '/sessao/id';
-        return null;
-    }
 
-    // Renderização do componente GameBoard aqui
+    
 
     return (
         <div>
