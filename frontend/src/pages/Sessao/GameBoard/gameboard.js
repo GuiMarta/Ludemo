@@ -24,24 +24,22 @@ const GameBoard = () => {
     }, [navigate]);
     
     useEffect(() => {
-       
-        if (encryptedData) {
-            // Descriptografa os parâmetros e armazena no localStorage
-            const { idProfissional, apelido } = decryptParams(encryptedData);
-            localStorage.setItem('idProfissional', idProfissional);
-            localStorage.setItem('apelidoPaciente', apelido);
+    if (encryptedData) {
+        try {
+        const { idProfissional, apelido } = decryptParams(encryptedData);
+        localStorage.setItem('idProfissional', idProfissional);
+        localStorage.setItem('apelidoPaciente', apelido);
+        } catch (e) {
+        navigate('/sessao/notfound');
         }
+    } else {
+        navigate('/sessao/notfound');
+    }
 
-        else {
-            // Se nao achar parâmetros, redireciona para a pagina de sessao
-            navigate('/sessao/notfound ');
-        }
-    
-        // Função para descriptografar (em Base64)
-        function decryptParams(encryptedData) {
-            const decryptedData = atob(encryptedData);  // Descriptografa os dados Base64
-            return JSON.parse(decryptedData);  // Converte a string de volta para objeto JSON
-        }
+    function decryptParams(encryptedData) {
+        const decryptedData = atob(encryptedData);
+        return JSON.parse(decryptedData);
+    }
 
 
 

@@ -13,8 +13,9 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import Home from './pages/Home/homePage';
 import Board from './pages/Jogo/Board';
 import Mobile from './components/mobile';
-import SessaoId from './pages/Sessao/info/info';
+import Join from './pages/Sessao/Join/Join';
 import GameBoard from './pages/Sessao/GameBoard/gameboard';
+import NotFound from './pages/Sessao/NotFound/NotFound';
 
 
 function App() {
@@ -47,7 +48,8 @@ function AppContent() {
           <Route path='/Mobile' element={<Mobile />} />
           {/* sessao paciente */}
           <Route path='/sessao/gameboard' element={<GameBoard />} />
-          <Route path='/sessao/notfound' element={<Mobile />} />
+          <Route path='/sessao/notfound' element={<NotFound />} />
+          <Route path='/sessao/join' element={<Join />} />
           
         </Routes>
       </div>
