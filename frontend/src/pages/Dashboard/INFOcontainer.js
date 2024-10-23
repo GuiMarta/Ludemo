@@ -6,14 +6,8 @@ const INFOcontainer = () => {
 
     return (
         <div>
-            <h1>InfoContainer</h1>
-            <ul>
-                {data.map((item, index) => (
-                    <li key={index}>
-                        {JSON.stringify(item)}
-                    </li>
-                ))}
-            </ul>
+            <h1>Histórico de Sessões</h1>
+            <h3>pra cá vai vir os relatorios listadinhos bonitinhos</h3>
         </div>
     );
 };

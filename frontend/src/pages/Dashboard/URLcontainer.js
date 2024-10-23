@@ -24,8 +24,8 @@ const URLContainer = () => {
         }
 
         const encryptedParams = encryptParams(id, apelido);
-        // setUrl(`https://ludemo.vercel.app/gameboard?data=${encryptedParams}`);
-        setUrl(`http://localhost:3000/sessao/gameboard?data=${encryptedParams}`);
+        setUrl(`https://ludemo.vercel.app/gameboard?data=${encryptedParams}`);
+        // setUrl(`http://localhost:3000/sessao/gameboard?data=${encryptedParams}`);
         setError('');
     };
 
@@ -47,7 +47,7 @@ const URLContainer = () => {
     }
 
     return (
-        <div className="border text-start">
+        <div className="border h-50 text-start">
             <div className='d-block rounded p-6'>
                 <h2 className="text-2xl text-center font-bold mb-4">Nova Sessão</h2>
                 <p className=' text-center text-danger mt-3' >{error}</p>
