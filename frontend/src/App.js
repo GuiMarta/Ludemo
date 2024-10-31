@@ -44,10 +44,12 @@ function AppContent() {
           <Route path='/Login' element={<Login />} />
           <Route path='/Cadastrar' element={<Cadastro />} />
           <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/jogo' element={<Board />} />
-          <Route path='/jogo02' element={<Quiz />} />
-
           <Route path='/Mobile' element={<Mobile />} />
+          {/* jogos */}
+          <Route path='/sessao/jogo' element={<Board />} />
+          <Route path='/sessao/jogo02' element={<Quiz />} />
+
+          
           {/* sessao paciente */}
           <Route path='/sessao/gameboard' element={<GameBoard />} />
           <Route path='/sessao/notfound' element={<NotFound />} />

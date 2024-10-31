@@ -1,52 +1,45 @@
-import React from 'react';
-import jogo6 from './image.png';
+import React, { useEffect } from 'react';
+import jogo01 from '../GameBoard/imgs/memoria - jogo01.jpg';
+import jogo6 from '../GameBoard/imgs/image.png';
+import jogo02 from './imgs/quiz - jogo 02.jpg' ;  
 import './gameboard.css';
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import HeaderGameBoard from './header';
 import Footer from '../../../components/footer';
 import { isMobile } from 'react-device-detect';
-
-
 
 const GameBoard = () => {
     const navigate = useNavigate();
     const params = new URLSearchParams(window.location.search);
     const encryptedData = params.get('data');
 
-    console.log("data:"+encryptedData); //testar se está pegando os dados dos parametros da requisição
-
     useEffect(() => {
-
         if (isMobile) {
             navigate('/Mobile');
         }
     }, [navigate]);
-    
+
     useEffect(() => {
-    if (encryptedData) {
-        try {
-        const { idProfissional, apelido } = decryptParams(encryptedData);
-        localStorage.setItem('idProfissional', idProfissional);
-        localStorage.setItem('apelidoPaciente', apelido);
-        } catch (e) {
-        navigate('/sessao/notfound');
+        if (encryptedData) {
+            try {
+                const { idProfissional, apelido } = decryptParams(encryptedData);
+                localStorage.setItem('idProfissional', idProfissional);
+                localStorage.setItem('apelidoPaciente', apelido);
+            } catch (e) {
+                navigate('/sessao/notfound');
+            }
+        } else {
+            navigate('/sessao/notfound');
         }
-    } else {
-        navigate('/sessao/notfound');
-    }
 
-    function decryptParams(encryptedData) {
-        const decryptedData = atob(encryptedData);
-        return JSON.parse(decryptedData);
-    }
+        function decryptParams(encryptedData) {
+            const decryptedData = atob(encryptedData);
+            return JSON.parse(decryptedData);
+        }
+    }, [encryptedData, navigate]);
 
-
-
-
-
-    }, []);
+   
     
 
     
@@ -60,23 +53,23 @@ const GameBoard = () => {
         </div>
         
         <div className="grid mb-5">
-            <Link to="/jogo" className="card-link">
-                <div className="card1"><img src={jogo6} /></div>
+            <Link to="/sessao/jogo" className="card-link">
+                <div className="card1"><img src={jogo01} alt='jogo' /></div>
             </Link>
-            <Link to="/Quiz" className="card-link">
-                <div className="card2"><img src={jogo6} /></div>
-            </Link>
-            <Link to="/jogo02/Quiz" className="card-link">
-                <div className="card1"><img src={jogo6} /></div>
+            <Link to="/sessao/jogo02" className="card-link">
+                <div className="card1"><img src={jogo02}  alt='jogo' /></div>
             </Link>
             <Link to="/jogo02" className="card-link">
-                <div className="card1"><img src={jogo6} /></div>
-            </Link>S
-            <Link to="/jogo02" className="card-link">
-                <div className="card1"><img src={jogo6} /></div>
+                <div className="card1"><img src={jogo6}  alt='jogo' /></div>
             </Link>
             <Link to="/jogo02" className="card-link">
-                <div className="card1"><img src={jogo6} /></div>
+                <div className="card1"><img src={jogo6} alt='jogo'  /></div>
+            </Link>
+            <Link to="/jogo02" className="card-link">
+                <div className="card1"><img src={jogo6}  alt='jogo' /></div>
+            </Link>
+            <Link to="/jogo02" className="card-link">
+                <div className="card1"><img src={jogo6}  alt='jogo' /></div>
             </Link>
         </div  >
 
