@@ -16,7 +16,7 @@ import Mobile from './components/mobile';
 import Join from './pages/Sessao/Join/Join';
 import GameBoard from './pages/Sessao/GameBoard/gameboard';
 import NotFound from './pages/Sessao/NotFound/NotFound';
-
+import Quiz from './pages/jogo02/Quiz';
 
 function App() {
   return (
@@ -45,12 +45,13 @@ function AppContent() {
           <Route path='/Cadastrar' element={<Cadastro />} />
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/jogo' element={<Board />} />
+          <Route path='/jogo02' element={<Quiz />} />
+
           <Route path='/Mobile' element={<Mobile />} />
           {/* sessao paciente */}
           <Route path='/sessao/gameboard' element={<GameBoard />} />
           <Route path='/sessao/notfound' element={<NotFound />} />
           <Route path='/sessao/join' element={<Join />} />
-          
         </Routes>
       </div>
     </div>

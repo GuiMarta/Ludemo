@@ -1,0 +1,88 @@
+/* Estilização geral */
+body {
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+  }
+  
+  .quiz {
+    text-align: center;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    font-size: 2em;
+    color: #333;
+  }
+  
+  /* Estilo da área de conteúdo */
+  .content, .finish {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo do contador de perguntas */
+  .spnQtd {
+    font-size: 1.2em;
+    color: #888;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  /* Estilo da pergunta */
+  .question {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: medium;
+  }
+  
+  /* Estilo dos botões de resposta */
+  .answer {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto;
+    padding: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #32669e;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .answer:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilo da mensagem final */
+  .finish span {
+    font-size: 1.4em;
+    color: #555;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo do botão de reiniciar */
+  .finish button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .finish button:hover {
+    background-color: #218838;
+  }
+  

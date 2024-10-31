@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "react-confetti": "^6.1.0",
     "react-device-detect": "^2.2.3",
     "react-responsive-carousel": "^3.2.23"
   }

@@ -1,8 +1,8 @@
 import React from "react";
 import Card from "./Card.js";
 import "./Board.css";
+import Confetti from "react-confetti"; // Importando a animação de confetes
 
-import logo from "./imgs/LogoLudemo.png";
 import Header from "./header.js";
 import emojiApaixonado from "./imgs/emoji apaixonado.jpg";
 import emojiDesapontado from "./imgs/emoji desapontado.jpg";
@@ -15,10 +15,8 @@ import emojiTriste from "./imgs/emoji triste.jpg";
 import Footer from "../../components/footer.js";
 
 class Board extends React.Component {
-  // igual função
   constructor(props) {
-    //
-    super(props); // necessário quando usa constructor, permite as func. básicas do react
+    super(props);
 
     const fronts = [
       emojiApaixonado,
@@ -32,21 +30,29 @@ class Board extends React.Component {
     ];
 
     const deck = fronts
-      .concat(fronts) // concat cria pares, duplica as cartas
-      .sort(() => Math.random() - 0.5) // sort embaralha os cartas, retornando um valor aleatório entre -0.5 e 0.5, o que resulta em uma ordenação aleatória.
-      .map((f) => {
-        //
-        return {
-          content: f,
-          faceUp: false,
-        };
-      });
+      .concat(fronts)
+      .sort(() => Math.random() - 0.5)
+      .map((f) => ({
+        content: f,
+        faceUp: false,
+      }));
 
     this.state = {
       deck: deck,
       firstCardIdx: null,
-      lockBoard: false, // Novo estado para evitar cliques durante a comparação
+      lockBoard: false,
+      showConfetti: false,
     };
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (
+      !this.state.showConfetti &&
+      this.state.deck.every((card) => card.faceUp)
+    ) {
+      console.log("Todos os pares foram encontrados, ativando confetes!");
+      this.setState({ showConfetti: true });
+    }
   }
 
   flipCardTo(cardIdx, faceUp) {
@@ -84,11 +90,16 @@ class Board extends React.Component {
 
   render() {
     return (
-
       <div>
-        <div>
-          <Header />
-        </div>
+        <Header />
+
+        {/* Confetti animation and winning message */}
+        {this.state.showConfetti && (
+          <>
+            <Confetti />
+            <div className="winning-message-top">Você ganhou! Parabéns!</div>
+          </>
+        )}
 
         <div className="game-container">
           <div className="game-board">
@@ -102,9 +113,7 @@ class Board extends React.Component {
             ))}
           </div>
         </div>
-        <div>
-          <Footer />
-        </div>
+        <Footer />
       </div>
     );
   }

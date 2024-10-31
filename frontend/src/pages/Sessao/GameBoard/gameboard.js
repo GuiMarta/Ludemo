@@ -9,6 +9,7 @@ import Footer from '../../../components/footer';
 import { isMobile } from 'react-device-detect';
 
 
+
 const GameBoard = () => {
     const navigate = useNavigate();
     const params = new URLSearchParams(window.location.search);
@@ -62,19 +63,19 @@ const GameBoard = () => {
             <Link to="/jogo" className="card-link">
                 <div className="card1"><img src={jogo6} /></div>
             </Link>
-            <Link to="/jogo" className="card-link">
+            <Link to="/Quiz" className="card-link">
+                <div className="card2"><img src={jogo6} /></div>
+            </Link>
+            <Link to="/jogo02/Quiz" className="card-link">
                 <div className="card1"><img src={jogo6} /></div>
             </Link>
-            <Link to="/jogo" className="card-link">
+            <Link to="/jogo02" className="card-link">
+                <div className="card1"><img src={jogo6} /></div>
+            </Link>S
+            <Link to="/jogo02" className="card-link">
                 <div className="card1"><img src={jogo6} /></div>
             </Link>
-            <Link to="/jogo" className="card-link">
-                <div className="card1"><img src={jogo6} /></div>
-            </Link>
-            <Link to="/jogo" className="card-link">
-                <div className="card1"><img src={jogo6} /></div>
-            </Link>
-            <Link to="/jogo" className="card-link">
+            <Link to="/jogo02" className="card-link">
                 <div className="card1"><img src={jogo6} /></div>
             </Link>
         </div  >
