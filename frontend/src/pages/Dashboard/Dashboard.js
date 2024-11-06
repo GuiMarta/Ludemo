@@ -7,9 +7,12 @@ import DashboardURLContainer from "../../pages/Dashboard/URLcontainer";
 import HeaderDashboard from "../../pages/Dashboard/header";
 import Footer from "../../components/footer";
 import DashboardInfoContainer from "../../pages/Dashboard/INFOcontainer";
+import { useState } from "react";
+import { Spinner } from "react-bootstrap";
 
 function Dashboard() {
   const navigate = useNavigate(); // Inicializa o useNavigate
+  const [render, setRender] = useState(false);
 
   useEffect(() => {
     const validarToken = async () => {
@@ -32,6 +35,7 @@ function Dashboard() {
 
         if (res.data.valid) {
           console.log("Token válido");
+          setRender(true);
           //se der tudo certo
         } else {
           console.error("Token inválido");
@@ -46,28 +50,34 @@ function Dashboard() {
     validarToken(); // Chama a função de validação do token ao carregar a página
   }, [navigate]); // O hook será executado uma vez ao montar o componente, devido à dependência `navigate`
 
-  return (
-    <div>
-
+  if(!render) {
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100">
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Carregando...</span>
+      </Spinner>
+      </div>
+    );
+  } 
+  else {
+    return (
+      <div>
         <HeaderDashboard />
-
         <div className="dashboard p-5">
-
-        <h1>Painel de controle do profissional</h1>
-        <div className="dashboard-body mt-5 d-flex ">
+          <h1>Painel de controle do profissional</h1>
+          <div className="dashboard-body mt-5 d-flex ">
             <div className="w-50">
-            <DashboardURLContainer />
+              <DashboardURLContainer />
             </div>
 
             <div className="w-50">
-            <DashboardInfoContainer />
+              <DashboardInfoContainer />
             </div>
-        </div>
-
+          </div>
         </div>
         <Footer />
-    </div>
-  );
+      </div>
+    );
+  }
 }
-
 export default Dashboard;
