@@ -65,7 +65,7 @@ function Dashboard() {
     return (
       <div>
         <HeaderDashboard />
-        <div className="dashboard p-5">
+        <div className="dashboard p-5 min-h-fit ">
         <h1 className="text-3xl font-semibold text-center text-gray-800">Painel de Controle do Profissional</h1>
           <div className=" mt-8 flex">
             <div className="w-50">  
@@ -79,6 +79,9 @@ function Dashboard() {
           <div>
             <JogosDisponiveis />
           </div>
+
+
+
         </div>
         <Footer />
       </div>
