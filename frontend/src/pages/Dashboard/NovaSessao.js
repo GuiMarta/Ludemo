@@ -64,7 +64,7 @@ const URLContainer = () => {
 
 
   return (
-    <div className="border border-gray-300 rounded-lg shadow-lg p-6 max-w-lg mx-auto bg-white">
+    <div className="border border-gray-300 rounded-lg shadow-lg p-6 min-h-96 max-w-prose mx-auto bg-white">
       <h2 className="text-2xl font-bold text-center mb-4 text-gray-800">Nova Sessão</h2>
 
       {error && (

@@ -9,6 +9,8 @@ import Footer from "../../components/footer";
 import HistoricoSessoes from "./HistoricoSessoes";
 import { useState } from "react";
 import { Spinner } from "react-bootstrap";
+import GameBoard from "../Sessao/GameBoard/gameboard";
+import JogosDisponiveis from "./JogosDisponiveis";
 
 function Dashboard() {
   const navigate = useNavigate(); // Inicializa o useNavigate
@@ -73,6 +75,9 @@ function Dashboard() {
             <div className="w-50">
               <HistoricoSessoes /> 
             </div>
+          </div>
+          <div>
+            <JogosDisponiveis />
           </div>
         </div>
         <Footer />
