@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
-import logo from '../Home/imgs/LogoLudemo.png';
+import logo from '../../Home/imgs/LogoLudemo.png';
 
 function Header() {
+    
 
     return (
         <header>

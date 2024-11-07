@@ -1,6 +1,6 @@
 import React from 'react';
 import './Card.css';
-import logo from '../Home/imgs/LogoLudemo.png';
+import logo from '../../Home/imgs/LogoLudemo.png';
 
 class Card extends React.Component { //mesma coisa que função
 

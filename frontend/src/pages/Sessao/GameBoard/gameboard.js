@@ -23,9 +23,10 @@ const GameBoard = () => {
     useEffect(() => {
         if (encryptedData) {
             try {
-                const { idProfissional, apelido } = decryptParams(encryptedData);
+                const { idProfissional, apelido, jogo } = decryptParams(encryptedData);
                 localStorage.setItem('idProfissional', idProfissional);
                 localStorage.setItem('apelidoPaciente', apelido);
+                localStorage.setItem('jogo', jogo);
             } catch (e) {
                 navigate('/sessao/notfound');
             }

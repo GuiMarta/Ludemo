@@ -3,10 +3,10 @@ import { useEffect } from "react";
 import "./Dashboard.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import DashboardURLContainer from "../../pages/Dashboard/URLcontainer";
+import NovaSessao from "./NovaSessao";
 import HeaderDashboard from "../../pages/Dashboard/header";
 import Footer from "../../components/footer";
-import DashboardInfoContainer from "../../pages/Dashboard/INFOcontainer";
+import HistoricoSessoes from "./HistoricoSessoes";
 import { useState } from "react";
 import { Spinner } from "react-bootstrap";
 
@@ -64,14 +64,14 @@ function Dashboard() {
       <div>
         <HeaderDashboard />
         <div className="dashboard p-5">
-          <h1>Painel de controle do profissional</h1>
-          <div className="dashboard-body mt-5 d-flex ">
-            <div className="w-50">
-              <DashboardURLContainer />
+        <h1 className="text-3xl font-semibold text-center text-gray-800">Painel de Controle do Profissional</h1>
+          <div className=" mt-8 flex">
+            <div className="w-50">  
+              <NovaSessao />
             </div>
 
             <div className="w-50">
-              <DashboardInfoContainer />
+              <HistoricoSessoes /> 
             </div>
           </div>
         </div>
@@ -81,3 +81,5 @@ function Dashboard() {
   }
 }
 export default Dashboard;
+
+

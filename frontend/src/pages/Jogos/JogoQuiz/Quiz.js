@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import questions from "./Questoes"; // Importa o arquivo de perguntas que você criará abaixo
+import questions from "./Questoes.js"; // Importa o arquivo de perguntas que você criará abaixo
 import './Quiz.css';
 import Header from "./header.js";
-import Footer from "../../components/footer.js";
+import Footer from "../../../components/footer.js";
 
 function Quiz() {
   const [currentIndex, setCurrentIndex] = useState(0);

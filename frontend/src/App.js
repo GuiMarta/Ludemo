@@ -11,12 +11,15 @@ import Login from './pages/Login/Login';
 import Cadastro from './pages/Cadastro/Cadastro';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Home from './pages/Home/homePage';
-import Board from './pages/Jogo/Board';
 import Mobile from './components/mobile';
 import Join from './pages/Sessao/Join/Join';
 import GameBoard from './pages/Sessao/GameBoard/gameboard';
 import NotFound from './pages/Sessao/NotFound/NotFound';
-import Quiz from './pages/jogo02/Quiz';
+
+
+// Imports jogos:
+import Quiz from './pages/Jogos/JogoQuiz/Quiz';
+import Board from './pages/Jogos/JogoDaMemoria/Board';
 
 function App() {
   return (
