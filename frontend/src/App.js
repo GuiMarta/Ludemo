@@ -49,10 +49,6 @@ function AppContent() {
           <Route path='/Cadastrar' element={<Cadastro />} />
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/Mobile' element={<Mobile />} />
-          {/* jogos */}
-          <Route path='/sessao/jogo' element={<Board />} />
-          <Route path='/sessao/jogo02' element={<Quiz />} />
-
 
           {/* Rota gameboard profissional */}
           <Route path='/sessao/gameboard' element={<GameBoard />} />
@@ -62,6 +58,9 @@ function AppContent() {
           <Route path='/sessao/notfound' element={<NotFound />} />
           <Route path='/sessao/join' element={<Join />} />
 
+          {/* jogos */}
+          <Route path='/sessao/ingame/jogo' element={<Board />} />  {/* jogo da memoria */}
+          <Route path='/sessao/ingame/quiz' element={<Quiz />} /> {/* jogo do quiz */}
 
         </Routes>
       </div>

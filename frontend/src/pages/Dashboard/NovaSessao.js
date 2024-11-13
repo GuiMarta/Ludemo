@@ -7,13 +7,20 @@ const URLContainer = () => {
   const [error, setError] = useState("");
 
   const [jogo, setjogo] = useState(null);
+
   const handleGameSelection = (game) => {
-    setjogo(game); // Define o jogo selecionado
+  urlReset(); // Limpa o URL atual ao selecionar outro jogo
+  setjogo(game);
+  console.log(`Jogo selecionado: ${game}`);
+
+  };
+  function urlReset() {
+    setUrl("");
   };
 
 
-
   const handleGenerate = () => {
+    console.log('Gerando Link de Sessão');
     if (!apelido || apelido.trim() === "" || apelido.length === 0 || !jogo || jogo.trim() === "" || jogo.length === 0) {
       setError("Por favor, preencha o apelido e o jogo desejado.");
       setUrl("");
@@ -39,11 +46,6 @@ const URLContainer = () => {
     const data = JSON.stringify({ idProfissional, apelido, jogo});
     return btoa(data);
   }
-
-
-
-  
-
 
   const copyToClipboard = () => {
     if (url) {
