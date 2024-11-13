@@ -9,7 +9,7 @@ const URLContainer = () => {
   const [jogo, setjogo] = useState(null);
 
   const handleGameSelection = (game) => {
-  urlReset(); // Limpa o URL atual ao selecionar outro jogo
+  urlReset(); // Limpa o URL atual ao selecionar outro jogo pra sumir o link e evitar confusão
   setjogo(game);
   console.log(`Jogo selecionado: ${game}`);
 
