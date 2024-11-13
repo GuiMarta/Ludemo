@@ -29,8 +29,8 @@ const URLContainer = () => {
     }
 
     const encryptedParams = encryptParams(id, apelido, jogo);
-    // setUrl(`https://ludemo.vercel.app/sessao/gameboard?data=${encryptedParams}`);
-    setUrl(`http://localhost:3000/sessao/gameboard?data=${encryptedParams}`);
+    // setUrl(`https://ludemo.vercel.app/sessao/ingame?data=${encryptedParams}`);
+    setUrl(`http://localhost:3000/sessao/ingame?data=${encryptedParams}`);
     setError("");
   };
 

@@ -10,6 +10,7 @@ import Footer from '../../../components/footer';
 import { isMobile } from 'react-device-detect';
 
 const GameBoard = () => {
+    
     // const navigate = useNavigate();
     // const params = new URLSearchParams(window.location.search);
     // const encryptedData = params.get('data');
