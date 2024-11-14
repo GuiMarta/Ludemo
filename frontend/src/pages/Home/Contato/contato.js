@@ -1,13 +1,9 @@
 import React from 'react';
-import './contato.css';
 
 const Contato = () => {
-
-
-
     return (
-        <div className="contato">
-            <h2>Contato</h2>
+        <div className="  bg-gray-50 py-12 px-6 shadow-lg ">
+            <h2 className='text-3xl font-bold text-center text-gray-800 mb-8' >Contato</h2>
             <p>Email: <br/>
             guilherme-marta@educar.rs.gov.br <br />
             larissa-gewehr@educar.rs.gov.br</p>

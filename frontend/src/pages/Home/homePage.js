@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import { isMobile } from 'react-device-detect';
 import { useEffect } from 'react';
 import Features from './Features/Features';
+import FAQ from './FAQ/Faq';
 function Home() {
 
     const navigate = useNavigate();
@@ -44,6 +45,9 @@ function Home() {
             </main>
             <div>
                 <Features />
+            </div>
+            <div>
+                <FAQ />
             </div>
             <div id='aboutus'>
                 <AboutUs />
