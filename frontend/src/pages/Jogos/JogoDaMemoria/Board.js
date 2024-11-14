@@ -12,7 +12,7 @@ import emojiPensando from "./imgs/emoji pensando.jpg";
 import emojiRaivoso from "./imgs/emoji raivoso.jpg";
 import emojiRindo from "./imgs/emoji rindo.jpg";
 import emojiTriste from "./imgs/emoji triste.jpg";
-import Footer from "../../components/footer.js";
+import Footer from "../../../components/footer.js";
 
 class Board extends React.Component {
   constructor(props) {

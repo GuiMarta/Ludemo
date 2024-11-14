@@ -3,13 +3,18 @@ import { useEffect } from "react";
 import "./Dashboard.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import DashboardURLContainer from "../../pages/Dashboard/URLcontainer";
+import NovaSessao from "./NovaSessao";
 import HeaderDashboard from "../../pages/Dashboard/header";
 import Footer from "../../components/footer";
-import DashboardInfoContainer from "../../pages/Dashboard/INFOcontainer";
+import HistoricoSessoes from "./HistoricoSessoes";
+import { useState } from "react";
+import { Spinner } from "react-bootstrap";
+import GameBoard from "../Sessao/GameBoard/gameboard";
+import JogosDisponiveis from "./JogosDisponiveis";
 
 function Dashboard() {
   const navigate = useNavigate(); // Inicializa o useNavigate
+  const [render, setRender] = useState(false);
 
   useEffect(() => {
     const validarToken = async () => {
@@ -32,6 +37,7 @@ function Dashboard() {
 
         if (res.data.valid) {
           console.log("Token válido");
+          setRender(true);
           //se der tudo certo
         } else {
           console.error("Token inválido");
@@ -46,28 +52,42 @@ function Dashboard() {
     validarToken(); // Chama a função de validação do token ao carregar a página
   }, [navigate]); // O hook será executado uma vez ao montar o componente, devido à dependência `navigate`
 
-  return (
-    <div>
-
+  if(!render) {
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100">
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Carregando...</span>
+      </Spinner>
+      </div>
+    );
+  } 
+  else {
+    return (
+      <div>
         <HeaderDashboard />
-
-        <div className="dashboard p-5">
-
-        <h1>Painel de controle do profissional</h1>
-        <div className="dashboard-body mt-5 d-flex ">
-            <div className="w-50">
-            <DashboardURLContainer />
+        <div className="dashboard p-5 min-h-fit ">
+        <h1 className="text-3xl font-semibold text-center text-gray-800">Painel de Controle do Profissional</h1>
+          <div className=" mt-8 flex">
+            <div className="w-50">  
+              <NovaSessao />
             </div>
 
             <div className="w-50">
-            <DashboardInfoContainer />
+              <HistoricoSessoes /> 
             </div>
-        </div>
+          </div>
+          <div>
+            <JogosDisponiveis />
+          </div>
+
+
 
         </div>
         <Footer />
-    </div>
-  );
+      </div>
+    );
+  }
 }
-
 export default Dashboard;
+
+

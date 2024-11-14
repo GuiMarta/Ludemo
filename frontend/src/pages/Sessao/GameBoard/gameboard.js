@@ -10,34 +10,36 @@ import Footer from '../../../components/footer';
 import { isMobile } from 'react-device-detect';
 
 const GameBoard = () => {
-    const navigate = useNavigate();
-    const params = new URLSearchParams(window.location.search);
-    const encryptedData = params.get('data');
+    
+    // const navigate = useNavigate();
+    // const params = new URLSearchParams(window.location.search);
+    // const encryptedData = params.get('data');
 
-    useEffect(() => {
-        if (isMobile) {
-            navigate('/Mobile');
-        }
-    }, [navigate]);
+    // useEffect(() => {
+    //     if (isMobile) {
+    //         navigate('/Mobile');
+    //     }
+    // }, [navigate]);
 
-    useEffect(() => {
-        if (encryptedData) {
-            try {
-                const { idProfissional, apelido } = decryptParams(encryptedData);
-                localStorage.setItem('idProfissional', idProfissional);
-                localStorage.setItem('apelidoPaciente', apelido);
-            } catch (e) {
-                navigate('/sessao/notfound');
-            }
-        } else {
-            navigate('/sessao/notfound');
-        }
+    // useEffect(() => {
+    //     if (encryptedData) {
+    //         try {
+    //             const { idProfissional, apelido, jogo } = decryptParams(encryptedData);
+    //             localStorage.setItem('idProfissional', idProfissional);
+    //             localStorage.setItem('apelidoPaciente', apelido);
+    //             localStorage.setItem('jogo', jogo);
+    //         } catch (e) {
+    //             navigate('/sessao/notfound');
+    //         }
+    //     } else {
+    //         navigate('/sessao/notfound');
+    //     }
 
-        function decryptParams(encryptedData) {
-            const decryptedData = atob(encryptedData);
-            return JSON.parse(decryptedData);
-        }
-    }, [encryptedData, navigate]);
+    //     function decryptParams(encryptedData) {
+    //         const decryptedData = atob(encryptedData);
+    //         return JSON.parse(decryptedData);
+    //     }
+    // }, [encryptedData, navigate]);
 
    
     
