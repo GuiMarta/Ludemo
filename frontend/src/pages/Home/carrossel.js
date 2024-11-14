@@ -23,7 +23,6 @@ const ImageCarousel = () => {
                     <div className="quadrado">
                         <h1>Seja bem-vindo à Ludemo!</h1>
                         <p>Uma plataforma de auxílio aos profissionais que trabalham com crianças.</p>
-                        <button class="cta-button" onClick={() => window.location.href = '/sessao/join'}>Entrar em sala</button>
                     </div>
                 </div>
                 <div>
@@ -31,7 +30,6 @@ const ImageCarousel = () => {
                     <div className="quadrado">
                         <h1>Seja bem-vindo à Ludemo!</h1>
                         <p>Uma plataforma de auxílio aos profissionais que trabalham com crianças.</p>
-                        <button class="cta-button" onClick={() => window.location.href = '/sessao/join'}>Entrar em sala</button>
                     </div>
                 </div>
                 <div>
@@ -39,7 +37,6 @@ const ImageCarousel = () => {
                     <div className="quadrado">
                         <h1>Seja bem-vindo à Ludemo!</h1>
                         <p>Uma plataforma de auxílio aos profissionais que trabalham com crianças.</p>
-                        <button class="cta-button" onClick={() => window.location.href = '/sessao/join'}>Entrar em sala</button>
                     </div>
                 </div>
             </Carousel>

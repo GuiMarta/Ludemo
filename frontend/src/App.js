@@ -12,7 +12,6 @@ import Cadastro from './pages/Cadastro/Cadastro';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Home from './pages/Home/homePage';
 import Mobile from './components/mobile';
-import Join from './pages/Sessao/Join/Join';
 import GameBoard from './pages/Sessao/GameBoard/gameboard';
 import NotFound from './pages/Sessao/NotFound/NotFound';
 import Ingame from './pages/Sessao/InGame/inGame';
@@ -56,7 +55,7 @@ function AppContent() {
           {/* sessao paciente */}
           <Route path='/sessao/ingame' element={<Ingame />} />
           <Route path='/sessao/notfound' element={<NotFound />} />
-          <Route path='/sessao/join' element={<Join />} />
+          
 
           {/* jogos */}
           <Route path='/sessao/ingame/jogo' element={<Board />} />  {/* jogo da memoria */}

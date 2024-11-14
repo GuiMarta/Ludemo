@@ -10,6 +10,7 @@ import Contato from './Contato/contato';
 import { useNavigate } from 'react-router-dom';
 import { isMobile } from 'react-device-detect';
 import { useEffect } from 'react';
+import Features from './Features/Features';
 function Home() {
 
     const navigate = useNavigate();
@@ -21,8 +22,9 @@ function Home() {
     }, [navigate]);
 
 
-    return ( 
-        <div> 
+    return (
+
+        <div>
             <header>
                 <div>
                     <img className='logo-header' src={logo} alt="" />
@@ -36,15 +38,17 @@ function Home() {
                     <Link to='/Dashboard' className='dois'>Área do Profissional</Link>
                 </div>
             </header>
-            
+
             <main>
                 <ImageCarousel />
             </main>
-
+            <div>
+                <Features />
+            </div>
             <div id='aboutus'>
                 <AboutUs />
             </div>
-
+            
             <div id='contato'>
                 <Contato />
             </div>
