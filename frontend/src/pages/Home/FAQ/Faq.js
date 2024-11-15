@@ -16,7 +16,7 @@ const FAQ = () => {
     },
     {
       question: "Como funciona a criação de sessões?",
-      answer: "Os psicólogos podem criar sessões personalizadas com um código único de acesso, que permite que as crianças entrem de forma segura e interativa.",
+      answer: "Os psicólogos podem criar sessões personalizadas com um link único de acesso, que permite que as crianças entrem de forma segura e interativa.",
     },
     {
       question: "Quem pode usar a plataforma Ludemo?",

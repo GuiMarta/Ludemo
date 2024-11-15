@@ -7,7 +7,7 @@ const Features = () => {
         {
             icon: <FaChalkboardTeacher className="text-4xl text-blue-600" />,
             title: "Criação de Sessões",
-            description: "Psicólogos podem criar sessões personalizadas para cada paciente, com um código de acesso único que facilita a entrada segura das crianças.",
+            description: "Psicólogos podem criar sessões personalizadas para cada paciente, com um link de acesso único que facilita a entrada segura das crianças.",
         },
         {
             icon: <FaGamepad className="text-4xl text-blue-600" />,

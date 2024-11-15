@@ -55,10 +55,10 @@ const GameBoard = () => {
         </div>
         
         <div className="grid mb-5">
-            <Link to="/sessao/jogo" className="card-link">
+            <Link to="/sessao/ingame/jogo" className="card-link">
                 <div className="card1"><img src={jogo01} alt='jogo' /></div>
             </Link>
-            <Link to="/sessao/jogo02" className="card-link">
+            <Link to="/sessao/ingame/quiz" className="card-link">
                 <div className="card1"><img src={jogo02}  alt='jogo' /></div>
             </Link>
             <Link to="/jogo02" className="card-link">
