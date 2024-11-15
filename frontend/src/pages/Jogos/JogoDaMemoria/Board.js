@@ -93,7 +93,7 @@ class Board extends React.Component {
       <div>
         <Header />
 
-        {/* Confetti animation and winning message */}
+        {/* Confetti animação e vitoria mensagem  */}
         {this.state.showConfetti && (
           <>
             <Confetti />
