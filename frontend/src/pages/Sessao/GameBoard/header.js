@@ -5,16 +5,18 @@ function Header() {
     const nome = localStorage.getItem('nome');
 
     return (
-        <header>
+        <header className='' >
             <div>
                 <img className='logo-header' src={logo} alt="" />
             </div>
             <div class="slogan">
                 Bem-vindo de volta, {nome}!
             </div>
-            <div>
-            <Link to='/' className='dois'>Página Incial</Link>
+            <div className="flex gap-3">
+                <Link to="/" className="dois">Página Inicial</Link>
+                <Link to="/dashboard" className="dois">Área do Profissional</Link>
             </div>
+
         </header>
     );
 }
