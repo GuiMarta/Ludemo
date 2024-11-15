@@ -16,7 +16,6 @@ function Header() {
                 <Link to="/" className="dois">Página Inicial</Link>
                 <Link to="/dashboard" className="dois">Área do Profissional</Link>
             </div>
-
         </header>
     );
 }
