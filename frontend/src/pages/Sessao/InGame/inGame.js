@@ -24,7 +24,7 @@ const InGame = () => {
                 localStorage.clear();
                 const { idProfissional, apelido, jogo } = decryptParams(encryptedData);
                 localStorage.setItem('idProfissional', idProfissional);
-                localStorage.setItem('apelidoPaciente', apelido);
+                localStorage.setItem('apelido', apelido);
                 localStorage.setItem('jogo', jogo);
                 setRender(true); // Agora chamado corretamente após o armazenamento
             } catch (e) {

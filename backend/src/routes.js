@@ -2,7 +2,7 @@ import { Router } from "express";
 import profissionalController from "./app/controllers/profissionalController.js";
 import jwt from "jsonwebtoken";
 import conexao from "./app/database/conexao.js"; // Importe a conexão do banco de dados
-
+import jogosController from "./app/controllers/jogosController.js";
 const router = Router();
 
 //rotabase
@@ -44,9 +44,6 @@ router.get("/sobre", (req, res) => {
     developers: ["Guilherme Marta", "Larissa Gewher"]
   });
 });
-
-
-
 
 
 // Função para tentar conectar ao banco de dados
@@ -101,13 +98,6 @@ router.post("/login", (req, res) => {
   });
 });
 
-
-
-
-
-
-
-
 //para listar todas os profissionais
 router.get("/profissionais/list", profissionalController.index);
 
@@ -122,8 +112,6 @@ router.put("/profissional/update/:id", profissionalController.update);
 
 //para criar um novo cadastro, enviando as info no corpo da requisição
 router.post("/cadastro", profissionalController.store);
-
-
 
 //funcao para verificar o token
 const verifyToken = (req, res, next) => {
@@ -145,5 +133,20 @@ const verifyToken = (req, res, next) => {
 router.get("/verifyToken", verifyToken, (req, res) => {
   res.json({ valid: true, userId: req.userId, message: "Token Válido" });
 });
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+// Recebendo dados da sessão 
+router.post("/add/relatory",jogosController.store);
+
+
+// Rota para listar todas as sessões
+
+
+
+
+
+
 
 export default router;
