@@ -46,19 +46,27 @@ const InGame = () => {
 
     const handleLoad = () => {
         try {
-            const { jogo } = JSON.parse(atob(encryptedData));
-
-            // Redirecionar para o Jogo da Memória
-            if (jogo === 'JogoDaMemoria' || localStorage.getItem('jogo') === 'JogoDaMemoria') {
-                navigate('/sessao/ingame/jogo');
+            const { idProfissional, apelido, jogo } = JSON.parse(atob(encryptedData));
+        
+            // Recriptografar os parâmetros para o redirecionamento
+            const newEncryptedData = btoa(JSON.stringify({ idProfissional, apelido, jogo }));
+        
+            // Redirecionar para o Jogo da Memória com os parâmetros criptografados
+            if (jogo === 'JogoDaMemoria' || localStorage.getItem('jogo') === 'JogoDaMemoria') { // alterar caso altere o nome do jogo
+                navigate(`/sessao/ingame/jogo?data=${newEncryptedData}`);
                 console.log('Redirecionado para Jogo da Memória');
             }
-
-            // Redirecionar para o Jogo de Quiz
-            else if (jogo === 'JogoQuiz' || localStorage.getItem('jogo') === 'JogoQuiz') {
-                navigate('/sessao/ingame/quiz');
+            
+            // Redirecionar para o Jogo de Quiz com os parâmetros criptografados
+            else if (jogo === 'JogoQuiz' || localStorage.getItem('jogo') === 'JogoQuiz') { // alterar caso altere o nome do jogo
+                navigate(`/sessao/ingame/quiz?data=${newEncryptedData}`);
                 console.log('Redirecionado para Jogo Quiz');
             }
+
+
+            // add else ifs pros proximos jogos
+
+
         } catch (e) {
             Notfound();
         }
