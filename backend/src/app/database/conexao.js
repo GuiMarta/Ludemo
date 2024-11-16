@@ -55,6 +55,7 @@ export const consulta = (sql, valores = "", mensagemReject) => {
     conexao.query(sql, valores, (erro, resultado) => {
 
       if (erro) {
+        console.log(erro);
         console.log(valores);
         return reject(mensagemReject);
       }

@@ -1,6 +1,7 @@
 import { consulta } from "../database/conexao.js";
 
 class JogosRepository {
+
     create(info) {
         const sql = `
             INSERT INTO SessaoRelatorio (idProfissional, apelido, jogo, contadorCliques, inicio, fim, duracao)
@@ -16,7 +17,6 @@ class JogosRepository {
             info.fim,
             info.duracao
         ];
-    
         return consulta(sql, values, "Não foi possível criar um novo relatório em jogosRepository");
     }
     
@@ -27,8 +27,8 @@ class JogosRepository {
   }
 
   findById(id) {
-    const sql = "SELECT * FROM profissional WHERE idprofissional=?";
-    return consulta(sql, id, "Não foi possivel localizar este usuário em ProfissionalRepository");
+    const sql = "SELECT * FROM SessaoRelatorio WHERE idprofissional=?";
+    return consulta(sql, id, "Não foi possivel localizar estes relatórios em jogosRepository");
   }
 
   login(info) {
@@ -45,5 +45,6 @@ class JogosRepository {
     const sql = "DELETE FROM profissional WHERE idprofissional=?";
     return consulta(sql, id, "Não foi possivel apagar o usuário  em ProfissionalRepository");
   }
+  
 }
 export default new JogosRepository();

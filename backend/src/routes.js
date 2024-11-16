@@ -141,8 +141,9 @@ router.get("/verifyToken", verifyToken, (req, res) => {
 router.post("/add/relatory",jogosController.store);
 
 
-// Rota para listar todas as sessões
 
+// Rota para listar todas as sessões por cada profissional
+router.get("/sessoes/list",jogosController.show);
 
 
 
