@@ -22,8 +22,8 @@ class JogosRepository {
     
 
   findAll() {
-    const sql = "SELECT * FROM profissional";
-    return consulta(sql, "Não foi possivel listar os usuários  em ProfissionalRepository ");
+    const sql = "SELECT * FROM SessaoRelatorio";
+    return consulta(sql, "Não foi possivel listar todos relatórios em jogosRepository");
   }
 
   findById(id) {
@@ -31,19 +31,9 @@ class JogosRepository {
     return consulta(sql, id, "Não foi possivel localizar estes relatórios em jogosRepository");
   }
 
-  login(info) {
-    const sql = "SELECT * FROM profissional WHERE crp=? AND senha=?";
-    return consulta(sql, [info.crp, info.senha], "Não foi possivel localizar este usuário em ProfissionalRepository");
-  }
-
-  update(info, id) {
-    const sql = "UPDATE profissional SET ? WHERE idprofissional=?";
-    return consulta(sql, [info, id], "Não foi possivel atualiar o usuário  em ProfissionalRepository ");
-  }
-
   delete(id) {
-    const sql = "DELETE FROM profissional WHERE idprofissional=?";
-    return consulta(sql, id, "Não foi possivel apagar o usuário  em ProfissionalRepository");
+    const sql = "DELETE FROM SessaoRelatorio WHERE id=?";
+    return consulta(sql, id, "Não foi possivel apagar o relatório em jogosRepository");
   }
   
 }

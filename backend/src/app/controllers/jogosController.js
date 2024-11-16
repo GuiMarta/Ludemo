@@ -4,21 +4,15 @@ import JogosRepository from '../repositories/jogosRepository.js';
 
 class jogosController {
 
-  async index(req, res) {
-    try {
-      const result = await profissionalRepository.findAll();
-      res.json(result);
-    } catch (error) {
-      res.status(500).json({ message: error });
-    }
-  }
-
   async show(req, res) {
     try {
-      const id = req.body;
+      
+      const id = req.params.id;
       const result = await jogosRepository.findById(id);
       res.json(result);
-    } catch (error) {
+
+    } 
+    catch (error) {
       res.status(500).json({ message: error });
     }
 
@@ -37,26 +31,6 @@ class jogosController {
     }
   }
 
-  async update(req, res) {
-    try {
-      const info = req.body;
-      const id = req.params.id;
-      const result = await profissionalRepository.update(info, id);
-      res.json(result);
-    } catch (error) {
-      res.status(500).json({ message: error });
-    }
-  }
-
-  async delete(req, res) {
-    try {
-      const id = req.params.id;
-      const result = await profissionalRepository.delete(id);
-      res.json(result);
-    } catch (error) {
-      res.status(500).json({ message: error });
-    }
-  }
 }
 
 export default new jogosController();
