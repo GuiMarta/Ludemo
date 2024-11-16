@@ -55,6 +55,7 @@ function connectToDatabase(callback) {
   function attemptReconnect() {
     conexao.ping((err) => {
       if (err) {
+
         if (retryCount < maxRetries) {
           retryCount++;
           console.log(`Falha ao conectar ao banco de dados. Tentando novamente em ${retryInterval / 1000} segundo...`);
@@ -143,9 +144,19 @@ router.post("/add/relatory",jogosController.store);
 
 
 // Rota para listar todas as sessões por cada profissional
-router.get("/sessoes/list/:id",jogosController.show);
+router.get("/sessoes/list/:id", (req, res) => {
+  console.log("Solicitação de Relatórios Recebida");
 
+  // Verifica a conexão antes de proceder
+  connectToDatabase((err) => {
+    if (err) {
+      return res.status(500).json({ message: "Erro ao conectar ao banco de dados", error: err });
+    }
 
+    // Chama o controlador se a conexão for bem-sucedida
+    jogosController.show(req, res);
+  });
+});
 
 
 

@@ -13,9 +13,8 @@ const INFOcontainer = () => {
             console.log(idProfissional);
 
             const response = await axios.get(`http://localhost:5000/sessoes/list/${idProfissional}`)
+            // const response = await axios.get(`https://ludemo-api.vercel.app/sessoes/list/${idProfissional}`)
 
-
-            console.log('Dados retornados:', response.data);
             if (response.data.length === 0 || response.data === undefined) {
                 setData(["Nenhuma sessão encontrada"]);
             } else {

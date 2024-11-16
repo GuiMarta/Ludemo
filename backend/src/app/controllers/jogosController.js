@@ -6,17 +6,25 @@ class jogosController {
 
   async show(req, res) {
     try {
-      
-      const id = req.params.id;
-      const result = await jogosRepository.findById(id);
-      res.json(result);
+      const idProfissional = req.params.id;
 
-    } 
-    catch (error) {
-      res.status(500).json({ message: error });
+      if (!idProfissional) {
+        return res.status(400).json({ message: "ID do profissional não fornecido." });
+      }
+
+      const result = await jogosRepository.findById(idProfissional);
+
+      if (result.length === 0) {
+        return res.status(200).json({ message: "Nenhum relatório encontrado para este profissional." });
+      }
+
+      res.status(200).json(result);
+    } catch (error) {
+      console.error("Erro ao buscar relatórios:", error.message);
+      res.status(500).json({ message: "Erro interno ao buscar relatórios." });
     }
-
   }
+
 
   async store(req, res) {
     
