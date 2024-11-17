@@ -74,7 +74,7 @@ class Board extends React.Component {
     componentDidMount() {
       const idProfissional = localStorage.getItem("idProfissional");
       const apelido = localStorage.getItem("apelido");
-      const jogo = localStorage.getItem("jogo");
+      const jogo = "Jogo da Memória";
   
       if (!idProfissional || !apelido || !jogo) {
         console.error("Dados ausentes, redirecionando para notfound...");
