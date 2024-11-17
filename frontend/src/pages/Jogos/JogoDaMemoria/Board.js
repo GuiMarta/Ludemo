@@ -100,7 +100,7 @@ class Board extends React.Component {
       console.log("Enviando dados da sessão:", dadosSessao);
   
       try {
-        const response = await axios.post("http://localhost:5000/add/relatory", dadosSessao, {
+        const response = await axios.post("https://ludemo-api.vercel.app/add/relatory", dadosSessao, {
           headers: { "Content-Type": "application/json" },
         });
   

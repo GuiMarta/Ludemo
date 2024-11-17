@@ -48,7 +48,7 @@ function Cadastro() {
                     email: values.email
                 };
 
-                const response = await axios.post('http://localhost:5000/cadastro', data);
+                const response = await axios.post('https://ludemo-api.vercel.app/cadastro', data);
                 setMensagem('Cadastro realizado! Redirecionando para a página de login...');
                 
                 
