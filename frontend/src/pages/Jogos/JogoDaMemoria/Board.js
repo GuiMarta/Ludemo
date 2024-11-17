@@ -4,6 +4,7 @@ import Card from "./Card.js";
 import "./Board.css";
 import Confetti from "react-confetti";
 import axios from 'axios';
+import axiosRetry from "axios-retry";
 import Header from "./header.js";
 import Footer from "../../../components/footer.js";
 
@@ -15,6 +16,20 @@ import emojiPensando from "./imgs/emoji pensando.jpg";
 import emojiRaivoso from "./imgs/emoji raivoso.jpg";
 import emojiRindo from "./imgs/emoji rindo.jpg";
 import emojiTriste from "./imgs/emoji triste.jpg";
+
+
+
+axiosRetry(axios, {
+  retries: 3, // Número máximo de tentativas
+  retryDelay: (retryCount) => {
+    console.log(`Tentativa #${retryCount}`);
+    return retryCount * 1000; // Aumenta o intervalo entre tentativas (1s, 2s, 3s...)
+  },
+  retryCondition: (error) => {
+    // Condição para repetir a requisição (erros de rede ou códigos de status >= 500)
+    return error.response?.status >= 500 || error.code === "ECONNABORTED";
+  },
+});
 
 class Board extends React.Component {
   constructor(props) {
