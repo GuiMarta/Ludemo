@@ -7,7 +7,7 @@ import axios from 'axios';
 import axiosRetry from "axios-retry";
 import Header from "./header.js";
 import Footer from "../../../components/footer.js";
-
+import { isMobile } from 'react-device-detect';
 import emojiApaixonado from "./imgs/emoji apaixonado.jpg";
 import emojiDesapontado from "./imgs/emoji desapontado.jpg";
 import emojiEmocionado from "./imgs/emoji emocionado.jpg";
