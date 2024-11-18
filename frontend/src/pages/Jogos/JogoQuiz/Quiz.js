@@ -4,8 +4,24 @@ import questions from "./Questoes.js";
 import './Quiz.css';
 import Header from "./header.js";
 import Footer from "../../../components/footer.js";
-
+import { isMobile } from 'react-device-detect';
+import { useNavigate } from 'react-router-dom';
 function Quiz() {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+      if (isMobile) {
+          navigate('/Mobile');
+      }
+  }, [navigate]);
+
+
+
+
+
+
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [questionsCorrect, setQuestionsCorrect] = useState(0);
   const [isFinished, setIsFinished] = useState(false);

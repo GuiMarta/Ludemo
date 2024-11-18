@@ -67,6 +67,7 @@ class Board extends React.Component {
         jogo: null,
         jogoFinalizado: false,
         redirectToNotFound: false,
+        redirectToMobile: false,
         dadosEnviados: false, 
       };
     }
@@ -75,8 +76,11 @@ class Board extends React.Component {
       const idProfissional = localStorage.getItem("idProfissional");
       const apelido = localStorage.getItem("apelido");
       const jogo = "Jogo da Memória";
-  
-      if (!idProfissional || !apelido || !jogo) {
+    
+      if (isMobile) {
+        console.log("Dispositivo móvel detectado. Redirecionando para a página mobile...");
+        this.setState({ redirectToMobile: true });
+      } else if (!idProfissional || !apelido || !jogo) {
         console.error("Dados ausentes, redirecionando para notfound...");
         this.setState({ redirectToNotFound: true });
       } else {
@@ -84,6 +88,7 @@ class Board extends React.Component {
         this.setState({ idProfissional, apelido, jogo, inicioSessao: new Date() });
       }
     }
+    
   
     componentDidUpdate(prevProps, prevState) {
       if (
@@ -167,6 +172,9 @@ class Board extends React.Component {
   render() {
     if (this.state.redirectToNotFound) {
       return <Navigate to="/sessao/notfound" />;
+    }
+    if (this.state.redirectToMobile) {
+      return <Navigate to="/Mobile" />; // Redireciona para a página de dispositivos móveis
     }
 
     return (
