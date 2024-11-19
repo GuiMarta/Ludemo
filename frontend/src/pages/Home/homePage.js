@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './homePage.css';
-import ImageCarousel from './carrossel';
-import './carrossel.css';
+import Main from './Main';
 import logo from './imgs/LogoLudemo.png';
 import Footer from '../../components/footer';
 import AboutUs from './AboutUs/About';
@@ -41,7 +40,7 @@ function Home() {
             </header>
 
             <main>
-                <ImageCarousel />
+                <Main />   
             </main>
             <div>
                 <Features />
