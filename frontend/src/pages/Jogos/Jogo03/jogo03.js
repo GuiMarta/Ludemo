@@ -6,7 +6,7 @@ const EmotionGame = () => {
     '😊': ['feliz', 'alegre', 'contente'],
     '😢': ['triste', 'chateado', 'desanimado'],
     '😠': ['raiva', 'irritado', 'bravo'],
-    '😱': ['surpreso', 'assustado', 'chocado'],
+    '😱': ['surpreso', 'surpresa' , 'assustado', 'chocado'],
     '😴': ['cansado', 'sonolento', 'dormindo']
   };
 
@@ -26,7 +26,7 @@ const EmotionGame = () => {
     const availableEmojis = Object.keys(emojiMap).filter(emoji => !usedEmojis.includes(emoji));
     if (availableEmojis.length === 0) {
       setFeedback('Parabéns, você completou o jogo!');
-      setShowConfetti(true); // Ativar confete no final do jogo
+      setShowConfetti(true);
       return;
     }
     const randomEmoji = availableEmojis[Math.floor(Math.random() * availableEmojis.length)];
@@ -42,17 +42,18 @@ const EmotionGame = () => {
     } else {
       setFeedback('Tente novamente.');
     }
-    setUserInput(''); // Limpa o input
-    displayRandomEmoji(); // Exibe um novo emoji
+    setUserInput('');
+    displayRandomEmoji();
   };
 
   useEffect(() => {
-    displayRandomEmoji();
-  }, [displayRandomEmoji]);
+    if (!showConfetti && usedEmojis.length === 0) {
+      displayRandomEmoji(); // Exibe o primeiro emoji ao carregar o jogo
+    }
+  }, [showConfetti, usedEmojis]);
 
   return (
     <div style={styles.pageContainer}>
-      {/* Confetti animation and winning message */}
       {showConfetti && <Confetti width={width} height={height} />}
       <div style={styles.gameContainer}>
         <h1>Qual é o sentimento?</h1>
