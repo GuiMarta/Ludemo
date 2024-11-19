@@ -22,6 +22,8 @@ import Ingame from './pages/Sessao/InGame/inGame';
 import Quiz from './pages/Jogos/JogoQuiz/Quiz';
 import Board from './pages/Jogos/JogoDaMemoria/Board';
 import Jogo03 from './pages/Jogos/Jogo03/jogo03';
+import Jogo04 from './pages/Jogos/Jogo04/Jogo04';
+
 
 function App() {
   return (
@@ -63,7 +65,7 @@ function AppContent() {
           <Route path='/sessao/ingame/jogo' element={<Board />} />  {/* jogo da memoria */}
           <Route path='/sessao/ingame/quiz' element={<Quiz />} /> {/* jogo do quiz */}
           <Route path='/sessao/ingame/Jogo03' element={<Jogo03 />} /> {/* jogo expressão */}
-        
+          <Route path='/sessao/ingame/Jogo04' element={<Jogo04 />} /> {/* jogo expressão */}
 
         </Routes>
       </div>
