@@ -48,7 +48,7 @@ const EmotionGame = () => {
 
   useEffect(() => {
     displayRandomEmoji();
-  }, []);
+  }, [displayRandomEmoji]);
 
   return (
     <div style={styles.pageContainer}>
