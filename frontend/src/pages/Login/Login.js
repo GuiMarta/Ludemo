@@ -107,7 +107,7 @@ function Login() {
                     <img className='logo-header' src={logo} alt="" />
                 </div>
                 <div className="slogan">
-                    Ludemo: Plataforma de auxílio aos profissionais.
+                    Ludemo: Plataforma de auxílio aos profissionais psicólogos.
                 </div>
                 <div>
                     <Link to='/' className='dois'>Página Incial</Link>

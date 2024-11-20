@@ -23,8 +23,13 @@ const Features = () => {
 
     return (
         <div className="bg-gray-50 py-12">
-            <div className="container mx-auto px-4 text-center">
-                <h2 className="text-3xl font-bold text-[#335374] mb-8">Funcionalidades do Ludemo</h2>
+           
+                <div className='flex justify-center' >
+                <h2 className="text-3xl font-bold text-[#335374] mb-8 ">Funcionalidades da Ludemo</h2>
+                </div>
+
+
+
                 <div className="grid gap-8 md:grid-cols-3">
                     {features.map((feature, index) => (
                         <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -34,7 +39,7 @@ const Features = () => {
                         </div>
                     ))}
                 </div>
-            </div>
+            
         </div>
     );
 };
