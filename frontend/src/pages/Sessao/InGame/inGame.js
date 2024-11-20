@@ -64,6 +64,13 @@ const InGame = () => {
             }
 
 
+            // Redirecionar para o jogo Qual o Sentimento com os parâmetros criptografados
+            else if (jogo === 'QualSentimento' || localStorage.getItem('jogo') === 'QualSentimento') { // alterar caso altere o nome do jogo
+                navigate(`/sessao/ingame/QualSentimento?data=${newEncryptedData}`);
+                console.log('Redirecionado para Jogo Qual Sentimento?');
+            }
+
+
             // add else ifs pros proximos jogos
 
 
