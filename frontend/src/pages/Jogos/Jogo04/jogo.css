@@ -1,61 +1,21 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f8ff;
-    margin: 0;
-    padding: 0;
-  }
-  
-  h1, h2 {
-    color: #333;
-  }
-  
-  button {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  button.selected {
-    background-color: #ffa500;
-  }
-  
-  .start-screen, .game-screen, .feedback-screen {
-    padding: 20px;
-  }
-  
-  .character img {
-    max-width: 200px;
-    margin: 20px 0;
-  }
-  
-  .emotions {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .emotions button {
-    margin: 5px;
-  }
-  
-  .feedback-screen ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .feedback-screen li {
-    background-color: #ddd;
-    margin: 5px;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
+.game-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.game-board {
+  min-width: 600px;
+  min-height: 600px;
+ 
+  border: 2px solid #335374;
+  border-radius: 2%;
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
