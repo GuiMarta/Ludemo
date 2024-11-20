@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useWindowSize } from "react-use";
+
 
 const LigarEmocoesGame = () => {
   const [matches, setMatches] = useState([]);
@@ -32,7 +34,7 @@ const LigarEmocoesGame = () => {
   return (
     <div style={styles.container}>
       <h1>Jogo de Ligar Emoções</h1>
-      <p>Arraste o emoji até o sentimento correspondente!</p>
+      <p className="pb-5" >Arraste o emoji até o sentimento correspondente!</p>
 
       <div style={styles.gameContainer}>
         <div style={styles.column}>
