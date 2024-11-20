@@ -64,6 +64,13 @@ const InGame = () => {
             }
 
 
+            // Redirecionar para o jogo Qual o Sentimento com os parâmetros criptografados
+            else if (jogo === 'QualSentimento' || localStorage.getItem('jogo') === 'QualSentimento') { // alterar caso altere o nome do jogo
+                navigate(`/sessao/ingame/QualSentimento?data=${newEncryptedData}`);
+                console.log('Redirecionado para Jogo Qual Sentimento?');
+            }
+
+
             // add else ifs pros proximos jogos
 
 
@@ -92,8 +99,7 @@ const InGame = () => {
                     <div className="min-w-[600px] min-h-[600px] border-2 border-[#335374] rounded-md overflow-hidden text-center p-5 max-w-[500px] mx-auto flex items-center justify-center">
                         <button
                             className="bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-indigo-600 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform transition-transform duration-300 ease-in-out hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-300 animate-bounce"
-                            onClick={handleLoad}
-                        >
+                            onClick={handleLoad}>
                             Jogar
                         </button>
 

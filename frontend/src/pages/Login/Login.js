@@ -107,7 +107,7 @@ function Login() {
                     <img className='logo-header' src={logo} alt="" />
                 </div>
                 <div className="slogan">
-                    Ludemo: Plataforma de auxílio aos profissionais.
+                    Ludemo: Plataforma de auxílio aos profissionais psicólogos.
                 </div>
                 <div>
                     <Link to='/' className='dois'>Página Incial</Link>
@@ -117,7 +117,10 @@ function Login() {
             <div className='main-body'>
                 <div className='d-flex justify-content-center align-items-center vh-100'>
                     <div className='bg-white p-3 rounded h-70 '>
-                        <h1>Login</h1>
+                        <h1 className="text-4xl font-bold text-gray-800 text-center mb-6">
+                            Login
+                        </h1>
+
                         <form className='align' action='' onSubmit={handleSubmit}>
                             <div className='mb-3'>
                                 <label htmlFor='crp'><strong>CRP</strong></label>
@@ -147,9 +150,9 @@ function Login() {
                             <p className='pt-1 small' >Ludemo.com a melhor plataforma de auxilio profissional.</p>
                             <p className='text-success' >{mensagemSucesso}</p>
                             <div className="d-flex justify-content-center  ">
-                            <Link to="/Cadastrar" className='btn btn-default border w-100 bg-light text-decoration-none'>Cadastrar</Link>
+                                <Link to="/Cadastrar" className='btn btn-default border w-100 bg-light text-decoration-none'>Cadastrar</Link>
                             </div>
-                                
+
                         </form>
                     </div>
                 </div>

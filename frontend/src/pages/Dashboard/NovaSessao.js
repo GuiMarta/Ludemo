@@ -135,6 +135,20 @@ const URLContainer = () => {
                     <label htmlFor="JogoQuiz" className="ml-2 text-gray-700">Jogo Quiz Sentimentos</label>
                   </div>
 
+                  {/* jogo Qual o Sentimento*/}
+                  <div className="flex items-center">
+                    <input
+                      type="radio"
+                      id="QualSentimento"
+                      name="game"
+                      value="QualSentimento"
+                      checked={jogo === 'QualSentimento'}
+                      onChange={() => handleGameSelection('QualSentimento')}
+                      className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                    />
+                    <label htmlFor="JogoQuiz" className="ml-2 text-gray-700">Jogo Qual o Sentimento</label>
+                  </div>
+
               
               {/* adiconar mais jogos aqui depois */}
 
