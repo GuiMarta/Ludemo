@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '../pages/Home/imgs/LogoLudemo.png'
+import logo from '../pages/Home/imgs/LUDEMO.png'
 
 
 function Header() {

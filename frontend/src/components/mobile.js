@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../pages/Home/imgs/LogoLudemo.png';
+import logo from '../pages/Home/imgs/LUDEMO.png';
 
 
 const Mobile = () => {

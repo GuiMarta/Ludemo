@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './LogoLudemo.png';
+import logo from './LUDEMO.png';
 
 
 const notfound = () => {

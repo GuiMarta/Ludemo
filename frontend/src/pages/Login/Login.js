@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import validaLogin from './LoginValidação';
 import axios from 'axios';
 import './login.css';
-import logo from './imgs/LogoLudemo.png';
+import logo from './imgs/LUDEMO.png';
 import Footer from '../../components/footer';
 import { isMobile } from 'react-device-detect';
 import { Spinner } from 'react-bootstrap'; // Importando Spinner do Bootstrap  

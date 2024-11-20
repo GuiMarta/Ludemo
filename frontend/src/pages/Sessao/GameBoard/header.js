@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from './imgs/LogoLudemo.png';
+import logo from './imgs/LUDEMO.png';
 
 function Header() {
     const nome = localStorage.getItem('nome');
