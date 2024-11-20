@@ -25,7 +25,7 @@ function Cadastro() {
         email: ''
     });
     const [errors, setErrors] = useState({});
-    
+
 
     const handleInput = (event) => {
         setValues(prev => ({ ...prev, [event.target.name]: event.target.value }));
@@ -50,10 +50,10 @@ function Cadastro() {
 
                 const response = await axios.post('https://ludemo-api.vercel.app/cadastro', data);
                 setMensagem('Cadastro realizado! Redirecionando para a página de login...');
-                
-                
+
+
                 setTimeout(() => {
-                    navigate('/Login'); 
+                    navigate('/Login');
                 }, 2000);
 
             }
@@ -68,7 +68,10 @@ function Cadastro() {
     return (
         <div className='d-flex justify-content-center align-items-center main-body vh-100'>
             <div className='bg-white p-3 rounded h-85'>
-                <h2 className=''>Cadastro De Profissional</h2>
+                <h2 className="text-3xl font-bold text-gray-800 text-center mb-6">
+                    Cadastro de Profissional
+                </h2>
+
                 <form action='' onSubmit={handleSubmit}>
                     <div className='mb-3'>
                         <label htmlFor='crp'><strong>CRP</strong></label>
@@ -90,10 +93,10 @@ function Cadastro() {
                         <label htmlFor='email'><strong>Email</strong></label>
                         <input type='email' placeholder='Email do Profissional' onChange={handleInput} name='email' className='form-control rounded-0' />
                         <span>{errors.email && <span className='text-danger'>{errors.email}</span>}</span>
-                    </div>
-                    <button type='submit' className='btn btn-success w-100'><strong>Cadastrar</strong></button>
-                    <p className='pt-3 small'>Ludemo.com a melhor plataforma de auxilio profissional.</p>
-                    
+                    </div><div className="d-flex justify-content-center  ">
+                        <button type='submit' className='btn btn-success w-100'><strong>cadastrar</strong></button>
+                    </div><p className='pt-3 small'>Ludemo.com a melhor plataforma de auxilio profissional.</p>
+
                 </form>
                 <p className='text-success'>{mensagem}</p>
                 <Link to="/Login" className='btn bt-primary border w-100'>Retornar para Login</Link>
