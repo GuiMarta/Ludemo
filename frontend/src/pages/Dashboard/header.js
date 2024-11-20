@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
-=======
 
 import logo from '../Home/imgs/LUDEMO.png'
 import  '../../components/header.css';
-
 
 function Header() {
     const nome = localStorage.getItem('nome');
