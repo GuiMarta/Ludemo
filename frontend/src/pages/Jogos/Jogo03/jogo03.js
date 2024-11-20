@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import Confetti from 'react-confetti';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const EmotionGame = () => {
   const emojiMap = {
@@ -11,22 +11,27 @@ const EmotionGame = () => {
   };
 
   const totalEmojis = Object.keys(emojiMap).length;
+  const idProfissional = localStorage.getItem("idProfissional");
+  const apelido = localStorage.getItem("apelido");
+  const jogo = "Qual o Sentimento?";
+
   const [currentEmoji, setCurrentEmoji] = useState('');
   const [usedEmojis, setUsedEmojis] = useState([]);
   const [userInput, setUserInput] = useState('');
   const [feedback, setFeedback] = useState('');
-  const [score, setScore] = useState(0);
-  const [showConfetti, setShowConfetti] = useState(false);
-
-  // Obter as dimensões da tela diretamente
-  const width = window.innerWidth;
-  const height = window.innerHeight;
+  const [isFinished, setIsFinished] = useState(false);
+  const [sessionData, setSessionData] = useState({
+    inicioSessao: new Date(),
+    fimSessao: null,
+    contadorCliques: 0,
+    dadosEnviados: false,
+  });
 
   const displayRandomEmoji = () => {
     const availableEmojis = Object.keys(emojiMap).filter(emoji => !usedEmojis.includes(emoji));
     if (availableEmojis.length === 0) {
       setFeedback('Parabéns, você completou o jogo!');
-      setShowConfetti(true);
+      setIsFinished(true);
       return;
     }
     const randomEmoji = availableEmojis[Math.floor(Math.random() * availableEmojis.length)];
@@ -35,29 +40,87 @@ const EmotionGame = () => {
   };
 
   const checkAnswer = () => {
+    setSessionData((prevData) => ({
+      ...prevData,
+      contadorCliques: prevData.contadorCliques + 1,
+    }));
+
     const correctAnswers = emojiMap[currentEmoji];
     if (correctAnswers && correctAnswers.includes(userInput.trim().toLowerCase())) {
       setFeedback('Correto! Muito bem!');
-      setScore(score + 1);
     } else {
       setFeedback('Tente novamente.');
     }
+
     setUserInput('');
     displayRandomEmoji();
   };
 
-  useEffect(() => {
-    if (!showConfetti && usedEmojis.length === 0) {
-      displayRandomEmoji(); // Exibe o primeiro emoji ao carregar o jogo
+  const enviarDadosSessao = async (fimSessao) => {
+    const { inicioSessao, contadorCliques } = sessionData;
+    const dadosSessao = {
+      idProfissional,
+      apelido,
+      jogo,
+      contadorCliques,
+      inicio: inicioSessao,
+      fim: fimSessao,
+      duracao: fimSessao ? (fimSessao - inicioSessao) / 1000 : 0, // Duração em segundos
+    };
+
+    console.log("Enviando dados da sessão:", dadosSessao);
+
+    try {
+      const response = await axios.post("https://ludemo-api.vercel.app/add/relatory", dadosSessao, {
+        headers: { "Content-Type": "application/json" },
+      });
+
+      if (response.status === 200) {
+        console.log("Relatório enviado com sucesso:", dadosSessao);
+      } else {
+        console.error("Erro ao enviar relatório:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Erro de conexão ao enviar relatório:", error);
     }
-  }, [showConfetti, usedEmojis]);
+  };
+
+  useEffect(() => {
+    if (isFinished && !sessionData.dadosEnviados) {
+      const fimSessao = new Date(); // Define o fim da sessão
+      setSessionData((prevData) => ({
+        ...prevData,
+        fimSessao,
+        dadosEnviados: true,
+      }));
+
+      // Envia os dados
+      enviarDadosSessao(fimSessao);
+    }
+  }, [isFinished, sessionData]);
+
+  useEffect(() => {
+    displayRandomEmoji(); // Exibe o primeiro emoji ao carregar o jogo
+  }, []);
+
+  const handleRestart = () => {
+    setUsedEmojis([]);
+    setIsFinished(false);
+    setFeedback('');
+    setSessionData({
+      inicioSessao: new Date(),
+      fimSessao: null,
+      contadorCliques: 0,
+      dadosEnviados: false,
+    });
+    displayRandomEmoji();
+  };
 
   return (
     <div style={styles.pageContainer}>
-      {showConfetti && <Confetti width={width} height={height} />}
       <div style={styles.gameContainer}>
         <h1>Qual é o sentimento?</h1>
-        {!showConfetti ? (
+        {!isFinished ? (
           <>
             <div style={styles.emojiDisplay}>{currentEmoji}</div>
             <input
@@ -73,7 +136,7 @@ const EmotionGame = () => {
         ) : (
           <div style={styles.celebrationContainer}>
             <p style={styles.congratsMessage}>{feedback}</p>
-            <p style={styles.score}>Você acertou {score} de {totalEmojis}!</p>
+            <button onClick={handleRestart} style={styles.button}>Jogar novamente</button>
           </div>
         )}
       </div>
@@ -82,7 +145,6 @@ const EmotionGame = () => {
 };
 
 const styles = {
-  
   pageContainer: {
     display: 'flex',
     justifyContent: 'center',
@@ -139,11 +201,6 @@ const styles = {
     fontSize: '1.5em',
     color: 'blue',
     marginBottom: '10px'
-  },
-  score: {
-    fontSize: '1.2em',
-    color: '#333',
-    marginTop: '15px'
   }
 };
 
