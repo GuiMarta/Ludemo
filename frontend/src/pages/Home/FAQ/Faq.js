@@ -3,26 +3,7 @@ import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleQuestion = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
-  const faqs = [
-    {
-      question: "O que é o Ludemo?",
-      answer: "Ludemo é uma plataforma que auxilia psicólogos no atendimento infantil remoto, oferecendo jogos interativos e recursos para o desenvolvimento emocional das crianças.",
-    },
-    {
-      question: "Como funciona a criação de sessões?",
-      answer: "Os psicólogos podem criar sessões personalizadas com um link único de acesso, que permite que as crianças entrem de forma segura e interativa.",
-    },
-    {
-      question: "Quem pode usar a plataforma Ludemo?",
-      answer: "A plataforma é destinada a psicólogos e profissionais que trabalham com o desenvolvimento emocional infantil, facilitando atendimentos remotos.",
-    },
-  ];
+ 
 
   return (
     <div class="min-w-full mx-auto px-5 bg-white min-h-sceen">
@@ -43,7 +24,7 @@ const FAQ = () => {
                   </span>
             </summary>
             <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-            A Ludemo é uma plataforma digital desenvolvida para auxiliar psicólogos no atendimento infantil remoto, oferecendo jogos interativos e relatórios detalhados para análise emocional e social das crianças.
+            A Ludemo é uma plataforma digital desenvolvida para auxiliar psicólogos no atendimento infantil remoto, oferecendo jogos interativos e relatórios para análise emocional e social das crianças.
             </p>
           </details>
         </div>
@@ -87,7 +68,7 @@ const FAQ = () => {
                   </span>
             </summary>
             <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-            Atualmente, a Ludemo oferece jogos como Jogo da Memória e Quiz Sentimentos, ambos projetados para estimular habilidades emocionais e sociais nas crianças.
+            Atualmente, a Ludemo oferece quatro jogos, todos projetados para estimular habilidades emocionais e sociais nas crianças.
             </p>
           </details>
         </div>
@@ -110,15 +91,15 @@ const FAQ = () => {
         <div class="py-5">
           <details class="group">
             <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-              <span> Quais jogos estão disponíveis na Ludemo?</span>
+              <span> É necessário ter conexão à internet para usar a Ludemo?
+              </span>
               <span class="transition group-open:rotate-180">
                     <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
     </svg>
                   </span>
             </summary>
             <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-            Atualmente, a Ludemo conta com  quatro jogos, como o Jogo da Memória e o Quiz Sentimentos, que foram desenvolvidos para estimular habilidades emocionais e sociais.
-            </p>
+            Sim, a Ludemo é uma plataforma online, então é necessário ter acesso à internet para utilizar seus recursos e realizar as sessões remotamente.</p>
           </details>
         </div>
         

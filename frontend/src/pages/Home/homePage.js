@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './homePage.css';
 import Main from './Main';
-import logo from './imgs/LogoLudemo.png';
+import logo from './imgs/LUDEMO.png';
 import Footer from '../../components/footer';
 import AboutUs from './AboutUs/About';
 import Contato from './Contato/contato';
@@ -27,10 +27,9 @@ function Home() {
         <div>
             <header>
                 <div>
-                    <img className='logo-header' src={logo} alt="" />
+                    <img className='logo-header logo-large w-32 h-32' src={logo} alt="" />
                 </div>
                 <div className='slogan'>
-                    Ludemo: Plataforma de auxílio aos profissionais psicólogos.
                 </div>
                 <div>
                     <a href='#aboutus' className='um'>Sobre nós</a>

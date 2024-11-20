@@ -1,79 +1,75 @@
-header  {
-    font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-  }
+header {
+    background-color: rgba(0, 0, 0, 0) !important; /* Fundo 100% transparente */
+    height: 12vh;
+    display: flex;
+    justify-content: space-between; /* Ajusta os espaços entre os itens */
+    align-items: center;
+    padding: 0 25px; /* Ajuste para manter espaçamento interno lateral */
+    z-index: 1000; /* Garante que a header fique acima */
+    position: fixed; /* Mantém a header fixa no topo */
+    top: 0;
+    width: 100%;
+    border: none; /* Remove qualquer borda */
+    box-shadow: none; /* Remove sombras indesejadas */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: none; /* Remove qualquer fundo */
+}
+
+main {
+    margin: 0;
+    padding: 0;
+}
 
 .um {
     margin-right: 20px;
-    color: #335374;
+    color: #ffffff; /* Define o texto como branco */
     text-decoration: none;
     margin-left: 10px;
-    margin-top: px;
     padding: 5px;
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+    transition: all 0.3s ease-in-out; /* Transição suave para hover */
 }
 
-.um:hover{
+.um:hover {
     text-decoration: underline;
     font-weight: 500;
 }
 
-
-.logo-header {
-    max-width: 20vh;
+/* .logo-header {
+    margin-top: 300;
+    max-width: 100vh;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
-    
-}
+    transition: all 0.3s ease-in-out; /* Transição suave para animações;
+} */
 
 .dois {
-    color: #335374;
+    color: #ffffff; /* Define o texto como branco */
     text-decoration: none;
-    
-    border: 1px solid #335374;
+    border: 1px solid #ffffff; /* Torna a borda branca */
     padding: 10px;
     border-radius: 5px;
-} 
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+    transition: all 0.3s ease-in-out; /* Transição suave para hover */
+}
 
 .dois:hover {
-    background-color: #335374;
-    color: #ffffff;
-}
-   
-
-header{
-    background-color: #ffffff;
-    height: 12vh;    
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-right: 25px
+    background-color: #ffffff; /* Define o fundo branco ao passar o mouse */
+    color: #335374; /* Texto fica na cor do tema principal ao passar o mouse */
 }
 
-.slogan{
-    color: #335374;
+.slogan {
+    color: #ffffff; /* Texto da slogan em branco */
     font-size: 15px;
-    font-weight: medium;
+    font-weight: 500; /* Fonte com peso intermediário */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adiciona um leve sombreamento */
 }
 
 @media (max-width: 768px) {
     .slogan {
         display: none;
     }
-}
-
-footer{
-    background-color: #090d10eb;
-    height: 4vh;    
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-}
-
-footer p{
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: medium;
-    justify-content: center;
-    
 }
