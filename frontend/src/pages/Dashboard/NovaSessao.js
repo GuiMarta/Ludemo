@@ -3,15 +3,15 @@ import React, { useState } from "react";
 const URLContainer = () => {
   const [apelido, setApelido] = useState("");
   const [url, setUrl] = useState("");
-  const [IdProfissional,setIdProfissional] = useState("");
+  const [IdProfissional, setIdProfissional] = useState("");
   const [error, setError] = useState("");
 
   const [jogo, setjogo] = useState(null);
 
   const handleGameSelection = (game) => {
-  urlReset(); // Limpa o URL atual ao selecionar outro jogo pra sumir o link e evitar confusão
-  setjogo(game);
-  console.log(`Jogo selecionado: ${game}`);
+    urlReset(); // Limpa o URL atual ao selecionar outro jogo pra sumir o link e evitar confusão
+    setjogo(game);
+    console.log(`Jogo selecionado: ${game}`);
 
   };
   function urlReset() {
@@ -41,13 +41,13 @@ const URLContainer = () => {
     setUrl(`https://ludemo.vercel.app/sessao/ingame?data=${encryptedParams}`);
     // setUrl(`http://localhost:3000/sessao/ingame?data=${encryptedParams}`);
 
-    
+
     setError("");
   };
 
 
   function encryptParams(idProfissional, apelido, jogo) {
-    const data = JSON.stringify({ idProfissional, apelido, jogo});
+    const data = JSON.stringify({ idProfissional, apelido, jogo });
     return btoa(data);
   }
 
@@ -108,48 +108,63 @@ const URLContainer = () => {
 
               {/* jogo da JogoMemoria */}
               <div className="space-y-2 mt-2">
-                  <div className="flex items-center">
-                    <input
-                      type="radio"
-                      id="JogoDaMemoria" // ID exclusivo para cada jogo
-                      name="game"
-                      value="JogoDaMemoria" // Valor associado ao jogo
-                      checked={jogo === 'JogoDaMemoria'} // Comparação com o valor
-                      onChange={() => handleGameSelection('JogoDaMemoria')}
-                      className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                    />
-                    <label htmlFor="JogoDaMemoria" className="ml-2 text-gray-700">Jogo da Memória</label>
-                  </div>
+                <div className="flex items-center">
+                  <input
+                    type="radio"
+                    id="JogoDaMemoria" // ID exclusivo para cada jogo
+                    name="game"
+                    value="JogoDaMemoria" // Valor associado ao jogo
+                    checked={jogo === 'JogoDaMemoria'} // Comparação com o valor
+                    onChange={() => handleGameSelection('JogoDaMemoria')}
+                    className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                  />
+                  <label htmlFor="JogoDaMemoria" className="ml-2 text-gray-700">Jogo da Memória</label>
+                </div>
               </div>
               {/* jogo Quiz */}
-                  <div className="flex items-center">
-                    <input
-                      type="radio"
-                      id="JogoQuiz"
-                      name="game"
-                      value="JogoQuiz"
-                      checked={jogo === 'JogoQuiz'}
-                      onChange={() => handleGameSelection('JogoQuiz')}
-                      className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                    />
-                    <label htmlFor="JogoQuiz" className="ml-2 text-gray-700">Jogo Quiz Sentimentos</label>
-                  </div>
+              <div className="flex items-center">
+                <input
+                  type="radio"
+                  id="JogoQuiz"
+                  name="game"
+                  value="JogoQuiz"
+                  checked={jogo === 'JogoQuiz'}
+                  onChange={() => handleGameSelection('JogoQuiz')}
+                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                />
+                <label htmlFor="JogoQuiz" className="ml-2 text-gray-700">Jogo Quiz Sentimentos</label>
+              </div>
 
-                  {/* jogo Qual o Sentimento*/}
-                  <div className="flex items-center">
-                    <input
-                      type="radio"
-                      id="QualSentimento"
-                      name="game"
-                      value="QualSentimento"
-                      checked={jogo === 'QualSentimento'}
-                      onChange={() => handleGameSelection('QualSentimento')}
-                      className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                    />
-                    <label htmlFor="JogoQuiz" className="ml-2 text-gray-700">Jogo Qual o Sentimento</label>
-                  </div>
+              {/* jogo Qual o Sentimento*/}
+              <div className="flex items-center">
+                <input
+                  type="radio"
+                  id="QualSentimento"
+                  name="game"
+                  value="QualSentimento"
+                  checked={jogo === 'QualSentimento'}
+                  onChange={() => handleGameSelection('QualSentimento')}
+                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                />
+                <label htmlFor="QualSentimento" className="ml-2 text-gray-700">Jogo Qual o Sentimento</label>
+              </div>
 
-              
+              {/* jogo Qual o Sentimento*/}
+              <div className="flex items-center">
+                <input
+                  type="radio"
+                  id="LigarEmocoes"
+                  name="game"
+                  value="LigarEmocoes"
+                  checked={jogo === 'LigarEmocoes'}
+                  onChange={() => handleGameSelection('LigarEmocoes')}
+                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                />
+                <label htmlFor="LigarEmocoes" className="ml-2 text-gray-700">Jogo Ligar Emoções </label>
+              </div>
+
+
+
               {/* adiconar mais jogos aqui depois */}
 
 

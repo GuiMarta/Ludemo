@@ -70,6 +70,11 @@ const InGame = () => {
                 console.log('Redirecionado para Jogo Qual Sentimento?');
             }
 
+            else if (jogo === 'LigarEmocoes' || localStorage.getItem('jogo') === 'LigarEmocoes') { // alterar caso altere o nome do jogo
+                navigate(`/sessao/ingame/LigarEmocoes?data=${newEncryptedData}`);
+                console.log('Redirecionado para Jogo Ligar Emoções');
+            }
+
 
             // add else ifs pros proximos jogos
 
