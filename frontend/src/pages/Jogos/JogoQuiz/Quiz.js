@@ -6,22 +6,10 @@ import Header from "./header.js";
 import Footer from "../../../components/footer.js";
 import { isMobile } from 'react-device-detect';
 import { useNavigate } from 'react-router-dom';
+import Confetti from "react-confetti"; // Importa a biblioteca de confetes
+
 function Quiz() {
-
   const navigate = useNavigate();
-
-  useEffect(() => {
-      if (isMobile) {
-          navigate('/Mobile');
-      }
-  }, [navigate]);
-
-
-
-
-
-
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const [questionsCorrect, setQuestionsCorrect] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
@@ -31,6 +19,12 @@ function Quiz() {
     contadorCliques: 0,
     dadosEnviados: false,
   });
+
+  useEffect(() => {
+    if (isMobile) {
+      navigate('/Mobile');
+    }
+  }, [navigate]);
 
   const idProfissional = localStorage.getItem("idProfissional");
   const apelido = localStorage.getItem("apelido");
@@ -101,7 +95,6 @@ function Quiz() {
         dadosEnviados: true,
       }));
 
-      // Aguarda fimSessao ser definido antes de enviar
       enviarDadosSessao(fimSessao);
     }
   }, [isFinished]);
@@ -109,6 +102,9 @@ function Quiz() {
   return (
     <div>
       <Header />
+
+      {/* Exibe os confetes ao finalizar */}
+      {isFinished && <Confetti />}
 
       <div className="quiz-container">
         <div className="quiz-board">

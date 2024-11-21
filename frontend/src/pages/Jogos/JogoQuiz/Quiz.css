@@ -1,86 +1,89 @@
 /* Estilização geral */
 body {
-  background-color: #f4f4f9;
-  font-family: Arial, sans-serif;
+  background-color: #f9f9f9; /* Fundo branco claro */
+  font-family: 'Arial', sans-serif; /* Fonte mais neutra e limpa */
+  margin: 0;
+  padding: 0;
 }
 
-.quiz-container{
+/* Container principal */
+.quiz-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0f0f0;
 }
 
+/* Tabuleiro do quiz */
 .quiz-board {
   min-width: 600px;
-  min-height: 600px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  margin: 0 auto;
-  border: 2px solid #335374;
-  border-radius: 2%;
-  overflow: hidden;
-  text-align: center;
+  background-color: #fff; /* Fundo branco */
+  border: 2px solid #ff8c00; /* Bordas vibrantes */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
   padding: 20px;
+  text-align: center;
   max-width: 500px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
+/* Título principal */
 h2 {
-  font-size: 2em;
-  color: #333;
+  font-size: 2.5em;
+  color: #ff4500; /* Cor vibrante */
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 /* Estilo da área de conteúdo */
 .content,
 .finish {
   margin-top: 20px;
-  background-color: #fff;
-  padding: 20px;
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo do contador de perguntas */
+/* Contador de perguntas */
 .spnQtd {
-  font-size: 1.2em;
+  font-size: 1em;
   color: #888;
   margin-bottom: 10px;
   display: block;
 }
 
-/* Estilo da pergunta */
+/* Pergunta */
 .question {
-  font-size: 1em;
+  font-size: 1.3em;
   color: #333;
   margin-bottom: 20px;
-  font-weight: medium;
+  font-weight: 400; /* Peso de fonte mais leve */
 }
 
-/* Estilo dos botões de resposta */
+/* Botões de resposta */
 .answer {
   display: block;
   width: 100%;
-  max-width: 200px;
+  max-width: 250px;
   margin: 10px auto;
-  padding: 12px;
-  font-size: 1em;
-  font-weight: bold;
+  padding: 15px;
+  font-size: 1.2em;
+  font-weight: 500; /* Fonte equilibrada */
   color: #fff;
-  background-color: #32669e;
+  background-color: #ff7f50; /* Cor amigável */
   border: none;
-  border-radius: 8px;
+  border-radius: 15px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .answer:hover {
-  background-color: #0056b3;
+  background-color: #ff4500; /* Cor mais intensa ao passar o mouse */
+  transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
 }
 
-/* Estilo da mensagem final */
+/* Mensagem final */
 .finish span {
   font-size: 1.4em;
   color: #555;
@@ -88,18 +91,19 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* Estilo do botão de reiniciar */
+/* Botão de reiniciar */
 .finish button {
   padding: 10px 20px;
-  font-size: 1em;
+  font-size: 1.2em;
   color: #fff;
-  background-color: #28a745;
+  background-color: #32cd32; /* Verde amigável */
   border: none;
-  border-radius: 8px;
+  border-radius: 15px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .finish button:hover {
-  background-color: #218838;
+  background-color: #228b22;
+  transform: scale(1.05); /* Zoom no botão */
 }
