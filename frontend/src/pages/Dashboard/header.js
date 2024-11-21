@@ -15,7 +15,7 @@ function Header() {
                 Bem-vindo de volta, {nome}!
             </div>
             <div>
-            <Link to='/' className='dois'>Página Incial</Link>
+            <Link to='/' className='dois'>Página Inicial</Link>
             </div>
         </header>
     );

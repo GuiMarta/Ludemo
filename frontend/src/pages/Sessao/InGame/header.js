@@ -12,7 +12,7 @@ function Header() {
                 Bom jogo!
             </div>
             <div>
-            <Link to='/' className='dois'>Página Incial</Link>
+            <Link to='/' className='dois'>Página Inicial</Link>
             </div>
         </header>
     );

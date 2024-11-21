@@ -110,7 +110,7 @@ function Login() {
                     Ludemo: Plataforma de auxílio aos profissionais psicólogos.
                 </div>
                 <div>
-                    <Link to='/' className='dois'>Página Incial</Link>
+                    <Link to='/' className='dois'>Página Inicial</Link>
                 </div>
             </header>
 
