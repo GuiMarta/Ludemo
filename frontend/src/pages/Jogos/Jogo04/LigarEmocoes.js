@@ -1,10 +1,20 @@
-import React, { useState } from "react";
-import { useWindowSize } from "react-use";
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const LigarEmocoesGame = () => {
   const [matches, setMatches] = useState([]);
   const [draggedItem, setDraggedItem] = useState(null);
+  const [isFinished, setIsFinished] = useState(false);
+  const [sessionData, setSessionData] = useState({
+    inicioSessao: new Date(),
+    fimSessao: null,
+    contadorCliques: 0,
+    dadosEnviados: false,
+  });
+
+  const idProfissional = localStorage.getItem("idProfissional");
+  const apelido = localStorage.getItem("apelido");
+  const jogo = "Ligar Emoções";
 
   const emojis = [
     { id: 1, emoji: "😊", feeling: "Feliz" },
@@ -20,6 +30,10 @@ const LigarEmocoesGame = () => {
 
   const handleDragStart = (id) => {
     setDraggedItem(id);
+    setSessionData((prevData) => ({
+      ...prevData,
+      contadorCliques: prevData.contadorCliques + 1,
+    }));
   };
 
   const handleDrop = (feelingId) => {
@@ -31,10 +45,53 @@ const LigarEmocoesGame = () => {
 
   const isMatched = (id) => matches.includes(id);
 
+  const enviarDadosSessao = async (fimSessao) => {
+    const { inicioSessao, contadorCliques } = sessionData;
+    const dadosSessao = {
+      idProfissional,
+      apelido,
+      jogo,
+      contadorCliques,
+      inicio: inicioSessao,
+      fim: fimSessao,
+      duracao: fimSessao ? (fimSessao - inicioSessao) / 1000 : 0, // Duração em segundos
+    };
+
+    console.log("Enviando dados da sessão:", dadosSessao);
+
+    try {
+      const response = await axios.post("https://ludemo-api.vercel.app/add/relatory", dadosSessao, {
+        headers: { "Content-Type": "application/json" },
+      });
+
+      if (response.status === 200) {
+        console.log("Relatório enviado com sucesso:", dadosSessao);
+      } else {
+        console.error("Erro ao enviar relatório:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Erro de conexão ao enviar relatório:", error);
+    }
+  };
+
+  useEffect(() => {
+    if (matches.length === emojis.length && !sessionData.dadosEnviados) {
+      const fimSessao = new Date();
+      setSessionData((prevData) => ({
+        ...prevData,
+        fimSessao,
+        dadosEnviados: true,
+      }));
+
+      enviarDadosSessao(fimSessao);
+      setIsFinished(true);
+    }
+  }, [matches, emojis.length, sessionData]);
+
   return (
     <div style={styles.container}>
       <h1>Jogo de Ligar Emoções</h1>
-      <p className="pb-5" >Arraste o emoji até o sentimento correspondente!</p>
+      <p>Arraste o emoji até o sentimento correspondente!</p>
 
       <div style={styles.gameContainer}>
         <div style={styles.column}>
@@ -72,7 +129,7 @@ const LigarEmocoesGame = () => {
         </div>
       </div>
 
-      {matches.length === emojis.length && (
+      {isFinished && (
         <div style={styles.successMessage}>Parabéns! Você acertou todas!</div>
       )}
     </div>

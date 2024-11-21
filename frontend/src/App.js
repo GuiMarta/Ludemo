@@ -64,7 +64,7 @@ function AppContent() {
           <Route path='/sessao/ingame/jogo' element={<Board />} />  {/* jogo da memoria */}
           <Route path='/sessao/ingame/quiz' element={<Quiz />} /> {/* jogo do quiz */}
           <Route path='/sessao/ingame/QualSentimento' element={<Jogo03 />} /> {/* jogo Qual Sentimento */}
-          <Route path='/sessao/ingame/Jogo04' element={<Jogo04 />} /> {/* jogo expressão */}
+          <Route path='/sessao/ingame/LigarEmocoes' element={<Jogo04 />} /> {/* jogo expressão */}
 
         </Routes>
       </div>
