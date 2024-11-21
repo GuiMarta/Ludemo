@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import jogo01 from '../GameBoard/imgs/memoria - jogo01.jpg';
+import jogo01 from '../GameBoard/imgs/memoria.png';
 import jogo6 from '../GameBoard/imgs/image.png';
+import jogo4 from '../GameBoard/imgs/ligar.png';
 import jogo02 from './imgs/quiz - jogo 02.jpg' ;  
 import './gameboard.css';
 import { useNavigate } from 'react-router-dom';
@@ -54,21 +55,29 @@ const GameBoard = () => {
             <p>JOGANDO COM AS EMOÇÕES</p>
         </div>
         
-        <div className="grid mb-5">
-            <Link to="/sessao/ingame/jogo" className="card-link">
-                <div className="card1"><img src={jogo01} alt='jogo' /></div>
-            </Link>
-            <Link to="/sessao/ingame/quiz" className="card-link">
-                <div className="card1"><img src={jogo02}  alt='jogo' /></div>
-            </Link>
-            <Link to="/jogo02" className="card-link">
-                <div className="card1"><img src={jogo6}  alt='jogo' /></div>
-            </Link>
-            <Link to="/gameboard/LigarEmocoes" className="card-link">
-                <div className="card1"><img src={jogo6} alt='jogo'  /></div>
-            </Link>
-            
-        </div  >
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 justify-center items-center">
+  <Link to="/sessao/ingame/jogo" className="card-link">
+    <div className="card1">
+      <img src={jogo01} alt="jogo" className="rounded-lg shadow-md hover:scale-105 transition-transform" />
+    </div>
+  </Link>
+  <Link to="/sessao/ingame/quiz" className="card-link">
+    <div className="card1">
+      <img src={jogo02} alt="jogo" className="rounded-lg shadow-md hover:scale-105 transition-transform" />
+    </div>
+  </Link>
+  <Link to="/gameboard/adivinharEmocao" className="card-link">
+    <div className="card1">
+      <img src={jogo6} alt="jogo" className="rounded-lg shadow-md hover:scale-105 transition-transform" />
+    </div>
+  </Link>
+  <Link to="/gameboard/LigarEmocoes" className="card-link">
+    <div className="card1">
+      <img src={jogo4} alt="jogo" className="rounded-lg shadow-md hover:scale-105 transition-transform" />
+    </div>
+  </Link>
+</div>
+
 
         <div>
             <Footer/ >

@@ -27,6 +27,7 @@ import Jogo04 from './pages/Jogos/Jogo04/Jogo04';
 //imports gameboard
 import GBjogo04 from './pages/Jogos/Jogo04/GBjogo04';
 import GBBoard from './pages/Jogos/JogoDaMemoria/GBBoard';
+import GBjogo03 from './pages/Jogos/Jogo03/GBjogo03';
 
 
 function App() {
@@ -74,6 +75,7 @@ function AppContent() {
 
           {/* Gameboard */}
 
+          <Route path='/gameboard/adivinharEmocao' element={<GBjogo03 />} /> {/* jogo Qual Sentimento */}
           <Route path='/gameboard/LigarEmocoes' element={<GBjogo04 />} /> {/* jogo expressão */}
           <Route path='/gameboard/jogomemoria' element={<GBBoard />} /> {/* jogo expressão */}
 
