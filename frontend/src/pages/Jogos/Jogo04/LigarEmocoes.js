@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Confetti from "react-confetti"; // Adicionando a biblioteca de confetes
 
 const LigarEmocoesGame = () => {
   const [matches, setMatches] = useState([]);
@@ -20,12 +21,6 @@ const LigarEmocoesGame = () => {
     { id: 1, emoji: "😊", feeling: "Feliz" },
     { id: 2, emoji: "😢", feeling: "Triste" },
     { id: 3, emoji: "😡", feeling: "Bravo" },
-  ];
-
-  const feelings = [
-    { id: 1, text: "Feliz" },
-    { id: 2, text: "Triste" },
-    { id: 3, text: "Bravo" },
   ];
 
   const handleDragStart = (id) => {
@@ -90,14 +85,14 @@ const LigarEmocoesGame = () => {
 
   return (
     <div style={styles.container}>
-      <h1>Jogo de Ligar Emoções</h1>
-      <p>Arraste o emoji até o sentimento correspondente!</p>
+      {isFinished && <Confetti />} {/* Renderiza confetes ao finalizar */}
+      <h1 style={styles.title}>Jogo de Ligar Emoções</h1>
+      <p style={styles.instructions}>Arraste o emoji até o sentimento correspondente!</p>
 
       <div style={styles.gameContainer}>
-        <div style={styles.column}>
-          {emojis.map((emoji) => (
+        {emojis.map((emoji) => (
+          <div style={styles.row} key={emoji.id}>
             <div
-              key={emoji.id}
               draggable={!isMatched(emoji.id)}
               onDragStart={() => handleDragStart(emoji.id)}
               style={{
@@ -107,26 +102,18 @@ const LigarEmocoesGame = () => {
             >
               {emoji.emoji}
             </div>
-          ))}
-        </div>
-
-        <div style={styles.column}>
-          {feelings.map((feeling) => (
             <div
-              key={feeling.id}
               onDragOver={(e) => e.preventDefault()}
-              onDrop={() => handleDrop(feeling.id)}
+              onDrop={() => handleDrop(emoji.id)}
               style={{
                 ...styles.feelingBox,
-                backgroundColor: isMatched(feeling.id)
-                  ? "#d4edda"
-                  : "#f8d7da",
+                backgroundColor: isMatched(emoji.id) ? "#d4edda" : "#f8d7da",
               }}
             >
-              {feeling.text}
+              {emoji.feeling}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
 
       {isFinished && (
@@ -137,46 +124,63 @@ const LigarEmocoesGame = () => {
 };
 
 const styles = {
-  container: {
-    fontFamily: "Arial, sans-serif",
-    textAlign: "center",
-    padding: "20px",
+  
+  title: {
+    fontSize: "2.5rem",
+    fontWeight: "bold",
+    color: "#333",
+    marginBottom: "10px",
+  },
+  instructions: {
+    fontSize: "1rem",
+    color: "#666",
+    marginBottom: "20px",
   },
   gameContainer: {
     display: "flex",
-    justifyContent: "center",
-    gap: "50px",
-    marginTop: "20px",
-  },
-  column: {
-    display: "flex",
     flexDirection: "column",
+    gap: "20px",
+  },
+  row: {
+    display: "flex",
     alignItems: "center",
+    justifyContent: "center",
+    gap: "20px",
   },
   emoji: {
     fontSize: "40px",
     cursor: "grab",
-    marginBottom: "10px",
+    backgroundColor: "#fff",
+    padding: "10px",
+    borderRadius: "10px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+    transition: "transform 0.2s, box-shadow 0.2s",
   },
   feelingBox: {
     width: "150px",
     height: "50px",
     border: "2px dashed #007bff",
-    borderRadius: "5px",
+    borderRadius: "10px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: "10px",
     fontSize: "18px",
+    fontWeight: "bold",
+    backgroundColor: "#f8f9fa",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    transition: "background-color 0.3s, transform 0.2s",
   },
   successMessage: {
     marginTop: "20px",
-    padding: "10px",
+    padding: "15px 25px",
     color: "#155724",
     backgroundColor: "#d4edda",
     border: "1px solid #c3e6cb",
-    borderRadius: "5px",
+    borderRadius: "10px",
     display: "inline-block",
+    fontSize: "18px",
+    fontWeight: "bold",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
   },
 };
 
