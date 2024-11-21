@@ -30,7 +30,7 @@ const JogosDisponiveis = () => {
 
 <div className='text-center flex flex-col items-center gap-4'>
   <img className='max-w-40 border border-stone-600 rounded-md shadow-lg hover:scale-105 transition-transform' src={Jogo03} alt='JogoDaMemoria' />
-  <h3 className='text-xl font-semibold'>Jogo da Memória</h3>
+  <h3 className='text-xl font-semibold'>Jogo Qual o Sentimento?</h3>
  
 </div>
 
