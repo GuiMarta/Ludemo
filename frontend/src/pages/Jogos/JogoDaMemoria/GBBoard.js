@@ -20,7 +20,7 @@ import emojiTriste from "./imgs/emoji triste.jpg";
 
 
 
-class Board extends React.Component {
+class GBBoard extends React.Component {
   constructor(props) {
     super(props);
 
@@ -144,4 +144,4 @@ class Board extends React.Component {
   }
 }
 
-export default Board;
+export default GBBoard;

@@ -18,26 +18,20 @@ const JogosDisponiveis = () => {
       <div className='text-center flex flex-col items-center gap-4'>
   <img className='max-w-40 border border-stone-600 rounded-md shadow-lg hover:scale-105 transition-transform' src={JogoDaMemoria} alt='JogoDaMemoria' />
   <h3 className='text-xl font-semibold'>Jogo da Memória</h3>
-  <p className='max-w-md text-sm text-gray-600'>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  </p>
+  
 </div>
 
 
 <div className='text-center flex flex-col items-center gap-4'>
   <img className='max-w-40 border border-stone-600 rounded-md shadow-lg hover:scale-105 transition-transform' src={JogoQuiz} alt='JogoDaMemoria' />
   <h3 className='text-xl font-semibold'>Jogo Quiz</h3>
-  <p className='max-w-md text-sm text-gray-600'>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  </p>
+ 
 </div>
 
 <div className='text-center flex flex-col items-center gap-4'>
   <img className='max-w-40 border border-stone-600 rounded-md shadow-lg hover:scale-105 transition-transform' src={Jogo03} alt='JogoDaMemoria' />
   <h3 className='text-xl font-semibold'>Jogo da Memória</h3>
-  <p className='max-w-md text-sm text-gray-600'>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  </p>
+ 
 </div>
 
 

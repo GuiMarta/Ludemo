@@ -4,9 +4,10 @@ import Footer from '../../../components/footer';
 import './jogo.css';
 import { Spinner } from "react-bootstrap";
 import LigarEmocoes from './LigarEmocoes';
+import { useState } from 'react';
 
-const Jogo4 = () => {
-    
+const GBjogo04 = () => {
+    const [render, setRender] = useState(true);
     if (!render) {
         return (
             <div className="d-flex justify-content-center align-items-center vh-100">
@@ -34,4 +35,4 @@ const Jogo4 = () => {
     }
 };
 
-export default Jogo4;
+export default GBjogo04;
