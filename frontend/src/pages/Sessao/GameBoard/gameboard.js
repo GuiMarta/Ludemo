@@ -64,15 +64,10 @@ const GameBoard = () => {
             <Link to="/jogo02" className="card-link">
                 <div className="card1"><img src={jogo6}  alt='jogo' /></div>
             </Link>
-            <Link to="/jogo02" className="card-link">
+            <Link to="/gameboard/LigarEmocoes" className="card-link">
                 <div className="card1"><img src={jogo6} alt='jogo'  /></div>
             </Link>
-            <Link to="/jogo02" className="card-link">
-                <div className="card1"><img src={jogo6}  alt='jogo' /></div>
-            </Link>
-            <Link to="/jogo02" className="card-link">
-                <div className="card1"><img src={jogo6}  alt='jogo' /></div>
-            </Link>
+            
         </div  >
 
         <div>
