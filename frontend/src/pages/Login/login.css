@@ -22,8 +22,9 @@
 .main-body {
     position: relative;
     width: 100%;
-    background-image: url('./imgs/fotofundologin.png');
+    background-image: url('./imgs/Design\ sem\ nome\ \(1\).png');
     background-size: cover;
     background-position: center;
+    border-radius: 5px;
 }
 

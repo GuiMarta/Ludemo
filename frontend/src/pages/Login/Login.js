@@ -114,9 +114,9 @@ function Login() {
                 </div>
             </header>
 
-            <div className='main-body'>
+            <div className='main-body '>
                 <div className='d-flex justify-content-center align-items-center vh-100'>
-                    <div className='bg-white p-3 rounded h-70 '>
+                <div className='bg-white p-3 rounded h-70' style={{ border: '2px solid #335374', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
                         <h1 className="text-4xl font-bold text-gray-800 text-center mb-6">
                             Login
                         </h1>
