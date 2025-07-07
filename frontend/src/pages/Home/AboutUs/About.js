@@ -12,11 +12,7 @@ const AboutUs = () => {
           <img src={desn2} alt="Guilherme Marta" className="w-40 h-40 rounded-full object-cover border-4 border-[#19466B] mb-4 mx-auto" />
           <p className="text-lg text-[#335374] font-semibold">Guilherme Marta</p>
         </div>
-        
-        <div className="foto text-center">
-          <img src={desn1} alt="Larissa Gewehr" className="w-40 h-40 rounded-full object-cover border-4 border-[#19466B] mb-4 mx-auto" />
-          <p className="text-lg text-[#335374] font-semibold">Larissa Gewehr</p>
-        </div>
+
       </div>
 
       <div className="texto max-w-3xl mx-auto text-justify text-gray-700 leading-relaxed ">
